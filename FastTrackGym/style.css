@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #ddd; /* Light gray color for text */
+    background-color: #111; /* Dark background color */
+    border: none; /* Ensure no border on the body */
+    outline: none; /* Ensure no outline on the body */
+}
+
+header {
+    background-color: #222; /* Darker background for header */
+    color: #fff;
+    padding: 10px 0;
+    border: none; /* Ensure no border on header */
+    outline: none; /* Ensure no outline on header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed; /* Keeps header at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures header stays on top */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h1 {
+    color: #00ff99; /* Neon green color for the gym name */
+}
+
+nav {
+    display: flex;
+    flex: 1;
+    justify-content: center; /* Center navigation links */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #00bfff; /* Bright blue color for navigation links */
+    text-decoration: none;
+    font-weight: bold; /* Make the text bolder */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+.hero {
+    background: url('backgroundgym.jpg') no-repeat center center/cover;
+    height: 500px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* Adjust padding to account for fixed header */
+}
+
+/* CSS for centering the specific small picture */
+.image-section {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically (if you set a height) */
+    height: 250px; /* Adjust height as needed to control vertical centering */
+
+}
+
+.image-section img {
+    max-width: 300px; /* Adjust size as needed */
+    width: auto; /* Auto width to maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.hero h2,
+.hero p {
+    color: #e0e0e0; /* Light gray color */
+    font-weight: bold; /* Make the text bolder */
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #1e90ff; /* Bright blue color */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1c86ee; /* Slightly darker blue on hover */
+}
+
+.features {
+    padding: 50px 0;
+    background-color: #222; /* Darker background for features section */
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #00bfff; /* Bright blue color for section heading */
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.feature {
+    width: 30%;
+}
+
+.feature h3 {
+    margin-bottom: 20px;
+    color: #00ff99; /* Neon green color for feature headings */
+}
+
+footer {
+    background-color: #222; /* Darker background for footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
