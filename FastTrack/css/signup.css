@@ -1,0 +1,31 @@
+/* signup.css */
+
+.login-section .login-form-wrap {
+    max-width: 360px; /* Reduced width */
+    padding: 20px; /* Added padding */
+    background-color: #1f1f1f; /* Optional: for better visibility */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.login-section .login-form h3 {
+    margin-bottom: 20px;
+    font-size: 22px; /* Slightly smaller font */
+    text-align: center;
+}
+
+.login-section .group-input input {
+    font-size: 14px; /* Slightly smaller input font */
+}
+
+.login-section .site-btn {
+    font-size: 14px;
+    padding: 10px 20px; /* Adjusted padding */
+}
+
+.login-section .switch-signup, 
+.login-section .switch-login {
+    margin-top: 1px;
+    text-align: center;
+    font-size: 14px; /* Smaller font size */
+}

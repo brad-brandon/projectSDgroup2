@@ -83,6 +83,14 @@ h6 {
     left: 30px; /* Positions it 20px from the right */
     z-index: 1000; /* Ensures the logo stays on top of other elements */
 }
+.LoginSignup img {
+    width: 250px; /* Adjust the width to make the image smaller */
+    height: auto; /* Maintain aspect ratio */
+    position: fixed; /* Fixes the image to the viewport */
+    top: 30px; /* Positions it 20px from the bottom */
+    right: 30px; /* Positions it 20px from the right */
+    z-index: 1000; /* Ensures the logo stays on top of other elements */
+}
 
 
 p {
