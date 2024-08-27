@@ -1,0 +1,89 @@
+body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+		
+		.header-section .logo img {
+		width: 200px; /* Adjust width as needed */
+		height: auto; /* Maintains the aspect ratio */
+		}
+
+
+        .payment-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #1f1f1f;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
+        }
+
+        .payment-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            font-size: 14px;
+            color: #fff;
+            background-color: #333;
+        }
+
+        .form-group input::placeholder {
+            color: #888;
+        }
+
+        .payment-method {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .payment-method label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .payment-method input {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            background-color: #e50914;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        .submit-btn:hover {
+            background-color: #f01f1f;
+        }

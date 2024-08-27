@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Membership - Gym Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/membership.css" type="text/css">
+<body>
+
+<header class="header-section">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="img/logo3.png" alt="FastTrack Gym Logo">
+            </a>
+        </div>
+    </header>
+
+<div class="membership-container">
+    <h1>Select Your Membership</h1>
+
+    <form action="payment.html" method="GET">
+        <!-- Student Membership Option -->
+        <div class="membership-option">
+            <input type="radio" id="student" name="membership" value="student" required>
+            <label for="student">Student Membership</label>
+            <div class="price">RM 80 / Monthly</div>
+        </div>
+
+        <!-- Normal Membership Option -->
+        <div class="membership-option">
+            <input type="radio" id="normal" name="membership" value="normal">
+            <label for="normal">Normal Membership</label>
+            <div class="price">RM 120 / Monthly</div>
+        </div>
+
+        <!-- Advanced Membership Option -->
+        <div class="membership-option">
+            <input type="radio" id="advanced" name="membership" value="advanced">
+            <label for="advanced">Advanced Membership</label>
+            <div class="price">RM 280 / Monthly</div>
+        </div>
+
+        <button type="submit" class="next-btn">Next</button>
+    </form>
+</div>
+
+</body>
+</html>	

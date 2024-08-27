@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Gym Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/payment.css" type="text/css">
+<body>
+
+<header class="header-section">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="img/logo3.png" alt="FastTrack Gym Logo">
+            </a>
+        </div>
+    </header>
+
+<div class="payment-container">
+    <h1>Payment Method</h1>
+
+    <form action="confirmation.html" method="POST">
+        <div class="form-group">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" name="card-name" placeholder="Enter name on card" required>
+        </div>
+
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+        </div>
+
+        <div class="form-group">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="month" id="expiry-date" name="expiry-date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" placeholder="123" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Pay Now</button>
+    </form>
+</div>
+
+</body>
+</html>	
