@@ -1,8 +1,9 @@
+
 <?php
 // Database connection settings
-$servername = "localhost"; // or your server name
-$username = "Webs392024"; // your database username
-$password = "Webs392024"; // your database password
+$servername = "localhost"; 
+$username = "Webs392024"; 
+$password = "Webs392024"; 
 $dbname = "fasttrack_gym";
 
 // Create connection
@@ -14,7 +15,6 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
     $full_name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['pass'];
@@ -34,14 +34,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $full_name, $email, $hashed_password);
+    // Generate verification token
+    $verification_token = bin2hex(random_bytes(16));
 
-    // Execute the statement
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, verification_token) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $full_name, $email, $hashed_password, $verification_token);
+
     if ($stmt->execute()) {
-        echo "Sign-up successful!";
-        header("Location: login.html"); // Redirect to login page
+        // Send verification email
+        //$verification_link = "http://yourdomain.com/verify.php?token=" . $verification_token;
+$verification_link = "http://localhost/projectSDgroup2/FastTrack/verify.php?token=" . $verification_token;
+
+// or if using an IP address
+// $verification_link = "http://127.0.0.1/projectSDgroup2/FastTrack/verify.php?token=" . $verification_token;
+
+        $subject = "Verify Your Email Address";
+        $message = "Hello $full_name,\n\nPlease click the link below to verify your email address:\n$verification_link\n\nThank you!";
+        $headers = "From: no-reply@yourdomain.com";
+
+        if (mail($email, $subject, $message, $headers)) {
+            echo "A verification email has been sent to your email address.";
+        } else {
+            echo "Failed to send verification email.";
+        }
     } else {
         echo "Error: " . $stmt->error;
     }
