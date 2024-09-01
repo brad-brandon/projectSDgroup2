@@ -37,8 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $id;
             $_SESSION['full_name'] = $full_name;
 
-            // Redirect to dashboard or any other protected page
-            header("Location: dashboard.php");
+            // Determine user type and redirect accordingly
+            $user_type = getUserType($conn, $id);
+            if ($user_type == 'user') {
+                header("Location: dashboard.php");
+            } else if ($user_type == 'staff'){
+                header("Location: staffMenu.php");
+            }else if ($user_type == 'admin'){
+                header("Location: adminMenu.php");
+            }
             exit();
         } else {
             echo "Invalid password.";
@@ -51,4 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
+
+function getUserType($conn, $id) {
+    $stmt = $conn->prepare("SELECT user_type FROM users WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($user_type);
+    $stmt->fetch();
+    $stmt->close();
+    return $user_type;
+}
 ?>
