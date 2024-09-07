@@ -70,7 +70,7 @@ $conn->close();
             </a>
         </div>
         <h1>Staff & Admin Dashboard</h1>				<div class="switch-login">
-            <a href="staff.html" class="or-login">Back to Homepage</a>
+            <a href="admin.html" class="or-login">Back to Homepage</a>
         </div>
     </div>
 

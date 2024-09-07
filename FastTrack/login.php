@@ -40,11 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Determine user type and redirect accordingly
             $user_type = getUserType($conn, $id);
             if ($user_type == 'user') {
-                header("Location: dashboard.php");
+                header("Location: customer.html");
             } else if ($user_type == 'staff'){
-                header("Location: staffMenu.php");
+                header("Location: staff.html");
             }else if ($user_type == 'admin'){
-                header("Location: adminMenu.php");
+                header("Location: admin.html");
             }
             exit();
         } else {
