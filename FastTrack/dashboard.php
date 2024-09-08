@@ -47,7 +47,7 @@ $admins_and_staff = [
     ['name' => 'Bradley', 'age' => 20],
     ['name' => 'Ash', 'age' => 20],
     ['name' => 'Airil', 'age' => 20],
-    ['name' => 'Syafiq', 'age' => null]
+    ['name' => 'Syafiq', 'age' => 22]
 ];
 
 // Close the database connection
