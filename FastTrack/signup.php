@@ -17,11 +17,12 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = $_POST['name'];
     $email = $_POST['email'];
+	$phoneNo = $_POST['phoneNo'];
     $password = $_POST['pass'];
     $confirm_password = $_POST['confirm-pass'];
 
     // Basic validation
-    if (empty($full_name) || empty($email) || empty($password) || empty($confirm_password)) {
+    if (empty($full_name) ||empty($phoneNo) || empty($email) || empty($password) || empty($confirm_password)) {
         echo "All fields are required.";
         exit();
     }
@@ -38,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verification_token = bin2hex(random_bytes(16));
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, verification_token) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $full_name, $email, $hashed_password, $verification_token);
+    $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, phoneNo, verification_token) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $full_name, $email, $hashed_password, $phoneNo,  $verification_token);
 
     if ($stmt->execute()) {
         // Send verification email
