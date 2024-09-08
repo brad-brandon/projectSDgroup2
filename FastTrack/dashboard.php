@@ -65,26 +65,18 @@ $conn->close();
 <body>
     <div class="header-section">
         <div class="logo">
-            <a href="./index.html">
+            <a href="./staff.html">
                 <img src="img/logo3.png" alt="FastTrack Gym Logo">
             </a>
         </div>
-        <h1>Staff & Admin Dashboard</h1>				<div class="switch-login">
+        <h1>Staff Dashboard</h1>				
+		<div class="switch-login">
             <a href="staff.html" class="or-login">Back to Homepage</a>
         </div>
     </div>
 
     <div class="profile-container">
         <div class="profile-wrap">
-            <div class="profile-name"><?php echo htmlspecialchars($full_name); ?></div>
-            <div class="profile-bio"><?php echo htmlspecialchars(ucfirst($user_type)); ?></div>
-            <div class="profile-info">
-                <h3>Personal Information</h3>
-                <p>Email: <?php echo htmlspecialchars($email); ?></p>
-                <!--<p>Phone: <?php// echo htmlspecialchars($phone); ?></p>-->
-                <p>Role: <?php echo htmlspecialchars(ucfirst($user_type)); ?></p>
-            </div>
-
             <div class="dashboard-sections">
                 <!-- Customer Subscriptions Section -->
                 <div class="section subscription-status">

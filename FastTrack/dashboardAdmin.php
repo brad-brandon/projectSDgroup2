@@ -47,7 +47,7 @@ $admins_and_staff = [
     ['name' => 'Bradley', 'age' => 20],
     ['name' => 'Ash', 'age' => 20],
     ['name' => 'Airil', 'age' => 20],
-    ['name' => 'Syafiq', 'age' => null]
+    ['name' => 'Syafiq', 'age' => 22]
 ];
 
 // Close the database connection
@@ -65,7 +65,7 @@ $conn->close();
 <body>
     <div class="header-section">
         <div class="logo">
-            <a href="./index.html">
+            <a href="./admin.html">
                 <img src="img/logo3.png" alt="FastTrack Gym Logo">
             </a>
         </div>
@@ -77,15 +77,6 @@ $conn->close();
 
     <div class="profile-container">
         <div class="profile-wrap">
-            <div class="profile-name"><?php echo htmlspecialchars($full_name); ?></div>
-            <div class="profile-bio"><?php echo htmlspecialchars(ucfirst($user_type)); ?></div>
-            <div class="profile-info">
-                <h3>Personal Information</h3>
-                <p>Email: <?php echo htmlspecialchars($email); ?></p>
-                <!--<p>Phone: <?php// echo htmlspecialchars($phone); ?></p>-->
-                <p>Role: <?php echo htmlspecialchars(ucfirst($user_type)); ?></p>
-            </div>
-
             <div class="dashboard-sections">
                 <!-- Customer Subscriptions Section -->
                 <div class="section subscription-status">
