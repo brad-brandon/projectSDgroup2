@@ -69,7 +69,8 @@ $conn->close();
                 <img src="img/logo3.png" alt="FastTrack Gym Logo">
             </a>
         </div>
-        <h1>Staff & Admin Dashboard</h1>				<div class="switch-login">
+        <h1>Admin Dashboard</h1>
+		<div class="switch-login">
             <a href="admin.html" class="or-login">Back to Homepage</a>
         </div>
     </div>

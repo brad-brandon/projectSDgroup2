@@ -141,3 +141,46 @@ body {
     font-size: 14px;
     margin: 0;
 }
+
+/* Added CSS for logout button */
+.logout-section {
+    text-align: right; /* Aligns the section to the right */
+    margin: 20px; /* Adds some margin around the section */
+}
+
+.site-btn {
+    display: inline-block; /* Allows padding and margin to take effect */
+    background-color: #ff4c4c; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Adds padding inside the button */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 5px; /* Rounds the corners of the button */
+    font-size: 16px; /* Increases font size */
+    font-weight: bold; /* Makes the text bold */
+    transition: background-color 0.3s; /* Adds a smooth transition for the hover effect */
+}
+
+.site-btn:hover {
+    background-color: #ff1a1a; /* Changes button color on hover */
+}
+
+/* Added CSS for switch login link */
+.switch-login {
+    text-align: center; /* Centers the link in its container */
+    margin-top: 20px; /* Adds some space above the link */
+}
+
+.or-login {
+    color: #fff; /* Link text color */
+    text-decoration: none; /* Removes underline from the link */
+    background-color: #333; /* Link background color */
+    padding: 10px 20px; /* Adds padding inside the link */
+    border-radius: 5px; /* Rounds the corners of the link */
+    display: inline-block; /* Allows padding and margin to take effect */
+    transition: background-color 0.3s; /* Adds a smooth transition for the hover effect */
+    font-weight: bold; /* Makes the text bold */
+}
+
+.or-login:hover {
+    background-color: #444; /* Changes background color on hover */
+}
