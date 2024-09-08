@@ -2,42 +2,67 @@
 // Start the session
 session_start();
 
-// Include database connection
-include 'db_connection.php';
+// Database connection settings
+$servername = "localhost";
+$username = "Webs392024";
+$password = "Webs392024";
+$dbname = "fasttrack_gym";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $membership_type = $_POST['membership_type'];
-    $status = $_POST['status'];
+    // Get and sanitize the form data
+    $full_name = $conn->real_escape_string(trim($_POST['full_name']));
+    $email = $conn->real_escape_string(trim($_POST['email']));
+    $phoneNo = $conn->real_escape_string(trim($_POST['phoneNo']));
+    $membershipType = $conn->real_escape_string(trim($_POST['membershipType']));
+    $status = $conn->real_escape_string(trim($_POST['status']));
 
     // Assuming you store the user ID in session
-    $user_id = $_SESSION['user_id'];
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
 
-    // Prepare the SQL statement to update the user profile
-    $sql = "UPDATE users SET name = ?, email = ?, phone = ?, membership_type = ?, status = ? WHERE id = ?";
-
-    // Prepare the statement
-    if ($stmt = $conn->prepare($sql)) {
-        // Bind the parameters
-        $stmt->bind_param("sssssi", $name, $email, $phone, $membership_type, $status, $user_id);
-
-        // Execute the statement
-        if ($stmt->execute()) {
-            // Success message
-            echo "Profile updated successfully.";
+        // Query the database to get user details
+        $sql = "SELECT full_name, email, phoneNo, membershipType, status FROM users WHERE id = ?";
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $stmt->bind_result($full_name, $email, $phoneNo, $membershipType, $status);
+            $stmt->fetch();
+            $stmt->close();
         } else {
-            // Error message
-            echo "Error updating profile: " . $stmt->error;
+            echo "Error preparing statement: " . $conn->error;
+            exit;
         }
 
-        // Close the statement
-        $stmt->close();
+        // Prepare the SQL statement to update the user profile
+        $updateSql = "UPDATE users SET full_name = ?, email = ?, phoneNo = ?, membershipType = ?, status = ? WHERE id = ?";
+        if ($updateStmt = $conn->prepare($updateSql)) {
+            // Bind the parameters
+            $updateStmt->bind_param("sssssi", $full_name, $email, $phoneNo, $membershipType, $status, $user_id);
+
+            // Execute the statement
+            if ($updateStmt->execute()) {
+                echo "Profile updated successfully.";
+            } else {
+                echo "Error updating profile: " . $updateStmt->error;
+            }
+
+            // Close the statement
+            $updateStmt->close();
+        } else {
+            echo "Error preparing update statement: " . $conn->error;
+        }
+
     } else {
-        echo "Error preparing statement: " . $conn->error;
+        echo "User ID is not set in session.";
     }
 
     // Close the connection
