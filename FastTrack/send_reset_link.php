@@ -39,12 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $headers = "From: no-reply@fasttrackgym.com";
 
         if (mail($email, $subject, $message, $headers)) {
-            echo "A password reset link has been sent to your email address.";
+			header("Location: verify_result.php?message=" . urlencode("A password reset link has been sent to your email address, please check your email."));
+                exit();
+
         } else {
-            echo "Failed to send reset email.";
+			header("Location: verify_result.php?message=" . urlencode("Failed to send reset email."));
+                exit();
         }
     } else {
-        echo "No account found with that email.";
+		header("Location: verify_result.php?message=" . urlencode("No account found with that email."));
+                exit();
+        //echo "No account found with that email.";
     }
 
     $stmt->close();

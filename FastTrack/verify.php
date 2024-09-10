@@ -32,18 +32,28 @@ if (isset($_GET['token'])) {
             $stmt = $conn->prepare("UPDATE users SET verified = 1, verification_token = NULL WHERE id = ?");
             $stmt->bind_param("i", $user_id);
             if ($stmt->execute()) {
-                echo "Your email has been verified! You can now log in.";
+                // Redirect to success page
+                header("Location: verify_result.php?message=" . urlencode("Your email has been verified! You can now log in."));
+                exit();
             } else {
-                echo "Failed to verify email.";
+                // Redirect to error page
+                header("Location: verify_result.php?message=" . urlencode("Failed to verify email. Please try again."));
+                exit();
             }
         } else {
-            echo "Invalid or expired verification link.";
+            // Invalid or expired token
+            header("Location: verify_result.php?message=" . urlencode("Invalid or expired verification link."));
+            exit();
         }
     } else {
-        echo "Invalid verification token.";
+        // Invalid token
+        header("Location: verify_result.php?message=" . urlencode("Invalid verification token."));
+        exit();
     }
 } else {
-    echo "No verification token provided.";
+    // No token provided
+    header("Location: verify_result.php?message=" . urlencode("No verification token provided."));
+    exit();
 }
 
 $conn->close();

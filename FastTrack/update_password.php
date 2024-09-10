@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if passwords match
     if ($new_password !== $confirm_password) {
-        echo "Passwords do not match.";
-        exit();
+		header("Location: verify_result.php?message=" . urlencode("Passwords do not match."));
+                exit();
     }
 
     // Hash the new password
@@ -31,9 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ss", $hashed_password, $token);
 
     if ($stmt->execute() && $stmt->affected_rows > 0) {
-        echo "Password reset successful! You can now <a href='login.html'>log in</a>.";
+
+        // echo "Password reset successful! You can now <a href='login.html'>log in</a>."
+				header("Location: login.html");
     } else {
-        echo "Invalid or expired reset token.";
+		header("Location: verify_result.php?message=" . urlencode("Invalid or expired reset token."));
+                exit();
+
     }
 
     $stmt->close();

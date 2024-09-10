@@ -21,14 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['pass'];
     $confirm_password = $_POST['confirm-pass'];
 
-    // Basic validation
-    if (empty($full_name) ||empty($phoneNo) || empty($email) || empty($password) || empty($confirm_password)) {
-        echo "All fields are required.";
-        exit();
-    }
-
     if ($password !== $confirm_password) {
-        echo "Passwords do not match.";
+        header("Location: verify_result.php?message=" . urlencode("Your password not same please try again"));
+                exit();
         exit();
     }
 
@@ -55,9 +50,12 @@ $verification_link = "http://localhost/projectSDgroup2/FastTrack/verify.php?toke
         $headers = "From: no-reply@yourdomain.com";
 
         if (mail($email, $subject, $message, $headers)) {
-            echo "A verification email has been sent to your email address.";
+			header("Location: verify_result.php?message=" . urlencode("A verification email has been sent to your email address."));
+                exit();
         } else {
-            echo "Failed to send verification email.";
+						header("Location: verify_result.php?message=" . urlencode("Failed to send verification email."));
+                exit();
+
         }
     } else {
         echo "Error: " . $stmt->error;

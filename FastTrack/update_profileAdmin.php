@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user_id'])) {
 
         // Execute the statement
         if ($updateStmt->execute()) {
-            echo "Profile updated successfully.";
-			echo '<a href="viewprofileAdmin.php" class="or-login">OK</a>';
+			header("Location: viewprofileAdmin.php");
+            
         } else {
             echo "Error updating profile: " . $updateStmt->error;
 			echo '<a href="viewprofileAdmin.php" class="or-login">OK</a>';

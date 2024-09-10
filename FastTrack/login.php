@@ -28,8 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if ($verified == 0) {
-            echo "Please verify your email before logging in.";
-            exit();
+			header("Location: verify_result.php?message=" . urlencode("Please verify your email before logging in."));
+                exit();
+
         }
 
         if (password_verify($password, $hashed_password)) {
@@ -48,10 +49,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit();
         } else {
-            echo "Invalid password.";
+			header("Location: verify_result.php?message=" . urlencode("Invalid password."));
+                exit();
+            //echo "Invalid password.";
         }
     } else {
-        echo "No account found with that email.";
+		header("Location: verify_result.php?message=" . urlencode("No account found with that email."));
+                exit();
+        //echo "No account found with that email.";
     }
 
     $stmt->close();

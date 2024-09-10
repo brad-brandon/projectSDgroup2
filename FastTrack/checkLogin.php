@@ -23,7 +23,9 @@ if($isValidUser)
 		}
 	}
 else {
-	echo "Wrong Username or Password";
-	echo '<br><a href="../login.php">Try Again?</a>';
+	header("Location: verify_result.php?message=" . urlencode("Wrong Username or Password, Please go to previous page and Try Again."));
+                exit();
+	//echo "Wrong Username or Password";
+	//echo '<br><a href="../login.php">Try Again?</a>';
 	}
 ?>
