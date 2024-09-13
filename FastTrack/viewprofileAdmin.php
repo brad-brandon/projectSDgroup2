@@ -58,7 +58,7 @@ $conn->close();
 
 <div class="profile-container">
     <div class="profile-wrap">
-        <h1 class="profile-name">Name :<?php echo htmlspecialchars($full_name); ?> </h1>
+        <h1 class="profile-name">Name : <?php echo htmlspecialchars($full_name); ?> </h1>
 
         <div class="profile-info">
             <h3>Contact Information</h3>
@@ -73,6 +73,7 @@ $conn->close();
 
         <!-- Edit Profile Button -->
         <button class="edit-profile-btn" onclick="toggleEditForm()">Edit Profile</button>
+		
 
         <!-- Edit Profile Form -->
         <div id="edit-profile-form" style="display: none;">
@@ -89,8 +90,31 @@ $conn->close();
                     <label for="phone">Phone:</label>
                     <input type="tel" id="phoneNo" name="phoneNo" value="<?php echo htmlspecialchars($phoneNo); ?>">
                 </div>
-               
                 <button type="submit" class="save-btn">Save</button>
+            </form>
+        </div>
+		
+		<br></br>
+
+        <!-- Change Password Button -->
+        <button class="change-password-btn" onclick="togglePasswordForm()">Change Password</button>
+
+        <!-- Change Password Form -->
+        <div id="change-password-form" style="display: none;">
+            <form action="change_password.php" method="POST">
+                <div class="form-group">
+                    <label for="current_password">Current Password:</label>
+                    <input type="password" id="current_password" name="current_password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new_password">New Password:</label>
+                    <input type="password" id="new_password" name="new_password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm New Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="save-btn">Change Password</button>
             </form>
         </div>
     </div>
@@ -103,6 +127,15 @@ $conn->close();
 <script>
     function toggleEditForm() {
         var form = document.getElementById('edit-profile-form');
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    }
+
+    function togglePasswordForm() {
+        var form = document.getElementById('change-password-form');
         if (form.style.display === 'none') {
             form.style.display = 'block';
         } else {
