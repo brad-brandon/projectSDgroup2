@@ -1,146 +1,137 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Nunito Sans', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-}
+    body {
+        font-family: 'Nunito Sans', sans-serif;
+        background-color: #121212;
+        color: #f4f4f4;
+        line-height: 1.6;
+        padding: 20px;
+    }
 
-/* Header Section */
-.header-section {
-    background-color: #2c3e50;
-    padding: 20px;
-    text-align: center;
-}
+    .header-section {
+        background-color: #1f1f1f;
+        padding: 20px;
+        text-align: center;
+    }
 
-.logo img {
-    max-width: 180px;
-}
+    .logo img {
+        max-width: 180px;
+    }
 
-/* Profile Container */
-.profile-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-.profile-wrap {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-}
+    .profile-wrap {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 600px;
+    }
 
-/* Profile Name */
-.profile-name {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #34495e;
-}
+    .profile-name {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #ffffff;
+    }
 
-/* Profile Information */
-.profile-info h3, .subscription-status h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    color: #e74c3c;
-}
+    .profile-info h3, .subscription-status h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        color: #f39c12;
+    }
 
-.profile-info p, .subscription-status p {
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
+    .profile-info p, .subscription-status p {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #f4f4f4;
+    }
 
-/* Edit Profile and Password Buttons */
+    .edit-profile-btn, .change-password-btn {
+        display: block;
+        background-color: #e74c3c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
 
+    .edit-profile-btn:hover, .change-password-btn:hover {
+        background-color: #c0392b;
+    }
 
-.edit-profile-btn:hover, .change-password-btn:hover {
-    background-color: #c0392b;
-}
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-/* Form Styling */
-.form-group {
-    margin-bottom: 15px;
-}
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #f4f4f4;
+    }
 
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #333;
-}
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: #2c2c2c;
+        color: #f4f4f4;
+    }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
+    .save-btn {
+        background-color: #27ae60;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+        font-size: 1rem;
+    }
 
-.save-btn {
-    background-color: #27ae60;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    font-size: 1rem;
-}
+    .save-btn:hover {
+        background-color: #1e8449;
+    }
 
-.save-btn:hover {
-    background-color: #1e8449;
-}
+    .footer-section {
+        margin-top: 40px;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #1f1f1f;
+        color: white;
+    }
 
-/* Footer Section */
-.footer-section {
-    margin-top: 40px;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #2c3e50;
-    color: white;
-}
+    .footer-section p {
+        margin: 0;
+    }
 
-.footer-section p {
-    margin: 0;
-}
-
-/* Toggle Form Display */
-change-password-form {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #ecf0f1;
-    border-radius: 5px;
-}
-
-/* Edit Profile and Password Buttons */
-.change-password-btn {
-    display: block;
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 50px;  /* Space between the buttons */
-    width: 100%;
-    font-size: 1rem;
-}
-
-.change-password-btn:hover {
-    background-color: #c0392b;
-}
+    #edit-profile-form, #change-password-form {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #2e2e2e;
+        border-radius: 5px;
+    }
+</style>
