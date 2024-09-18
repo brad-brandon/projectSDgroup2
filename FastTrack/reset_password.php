@@ -72,7 +72,7 @@ if (isset($_GET['token'])) {
                 <div class="group-input">
 				<input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
                     <label for="password">New Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" minlength="8" required>
                 </div>
 				<div class="group-input">
 				<input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
