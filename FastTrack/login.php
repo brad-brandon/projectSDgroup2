@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($user_type == 'user') {
                 header("Location: customer.html");
             } else if ($user_type == 'staff'){
-                header("Location: dashboard/index.html");
+                header("Location: dashboardStaff/index.html");
             }else if ($user_type == 'admin'){
                 header("Location: dashboard/index.html");
             }

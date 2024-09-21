@@ -81,15 +81,15 @@ $conn->close();
             <form action="update_profileAdmin.php" method="POST">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="full_name" name="full_name" value="<?php echo htmlspecialchars($full_name); ?>">
+                    <input type="text" id="full_name" name="full_name" required value="<?php echo htmlspecialchars($full_name); ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
+                    <input type="email" id="email" name="email"  required value="<?php echo htmlspecialchars($email); ?>">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone:</label>
-                    <input type="tel" id="phoneNo" name="phoneNo" value="<?php echo htmlspecialchars($phoneNo); ?>">
+                    <input type="tel" id="phoneNo" name="phoneNo"  required value="<?php echo htmlspecialchars($phoneNo); ?>">
                 </div>
                 <button type="submit" class="save-btn">Save</button>
             </form>

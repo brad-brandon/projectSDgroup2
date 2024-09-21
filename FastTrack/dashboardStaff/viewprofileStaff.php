@@ -44,14 +44,13 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Profile Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/viewprofile.css" type="text/css">
-
+    <link rel="stylesheet" href="css/viewprofile.css" type="text/css">
 </head>
 <body>
 
 <header class="header-section">
     <div class="logo">
-        <a href="./admin.html">
+        <a href="./index.html">
             <img src="img/logo3.png" alt="FastTrack Gym Logo">
         </a>
     </div>
@@ -59,7 +58,7 @@ $conn->close();
 
 <div class="profile-container">
     <div class="profile-wrap">
-        <h1 class="profile-name">Name : <?php echo htmlspecialchars($full_name); ?> </h1>
+        <h1 class="profile-name">Name :<?php echo htmlspecialchars($full_name); ?> </h1>
 
         <div class="profile-info">
             <h3>Contact Information</h3>
@@ -74,14 +73,13 @@ $conn->close();
 
         <!-- Edit Profile Button -->
         <button class="edit-profile-btn" onclick="toggleEditForm()">Edit Profile</button>
-		
 
         <!-- Edit Profile Form -->
         <div id="edit-profile-form" style="display: none;">
-            <form action="update_profileAdmin.php" method="POST">
+            <form action="update_profileStaff.php" method="POST">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="full_name" name="full_name" required value="<?php echo htmlspecialchars($full_name); ?>">
+                    <input type="text" id="full_name" name="full_name" value="<?php echo htmlspecialchars($full_name); ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -91,13 +89,13 @@ $conn->close();
                     <label for="phone">Phone:</label>
                     <input type="tel" id="phoneNo" name="phoneNo" value="<?php echo htmlspecialchars($phoneNo); ?>">
                 </div>
+               
                 <button type="submit" class="save-btn">Save</button>
             </form>
         </div>
 		
 		<br></br>
-
-        <!-- Change Password Button -->
+    <!-- Change Password Button -->
         <button class="change-password-btn" onclick="togglePasswordForm()">Change Password</button>
 
         <!-- Change Password Form -->
@@ -134,8 +132,8 @@ $conn->close();
             form.style.display = 'none';
         }
     }
-
-    function togglePasswordForm() {
+	
+	function togglePasswordForm() {
         var form = document.getElementById('change-password-form');
         if (form.style.display === 'none') {
             form.style.display = 'block';
