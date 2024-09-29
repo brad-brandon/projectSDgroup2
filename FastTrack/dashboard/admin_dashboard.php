@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Gym Class Schedule</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Gym Class Schedule</h2>
+<!-- The Add Class Button -->
+
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Gym Dashboard</title>
+    <title>Gym Class Dashboard</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,6 +58,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	<link href="css/classtable.css" rel="stylesheet">
 </head>
 
 <body>
@@ -65,7 +95,7 @@
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Membership</a>
-                    <a href="admin_dashboard.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Class</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Class</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Personal Training</a>
                     
                 </div>
@@ -74,7 +104,7 @@
         <!-- Sidebar End -->
 
 
-        <!-- Content Start -->
+         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
@@ -174,78 +204,8 @@
             <!-- Navbar End -->
 
 
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Customer Subscriptions</h6>
-                                <a href="">Show All</a>
-                            </div>
-                          
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Admin and Staff</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
+            <!-- Table Start -->
+			<div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Classes Table</h6>
@@ -254,74 +214,169 @@
                     <img src="img/classtimetable.png" alt="Class Time" width="1000" height="auto">
                 </div>
             </div>
-            <!-- Recent Sales End -->
+			
+			<div class="classtime-table">
+			<!--i edit here-->
+<button onclick="showAddClassForm()">Add Class</button>
+
+<!-- The Schedule Table -->
+<table>
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- PHP Loop to fetch schedule from the database -->
+        <?php
+		$servername = "localhost";
+$username = "root";  // adjust your database credentials
+$password = "root";
+$dbname = "fasttrack_gym";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+        $time_slots = ['10:00:00', '14:00:00', '16:00:00', '18:00:00', '20:00:00'];
+        $days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        foreach ($time_slots as $time) {
+            echo "<tr>";
+            echo "<td class='workout-time'>" . date('H:i', strtotime($time)) . "</td>";
+            foreach ($days_of_week as $day) {
+                echo "<td class='hover-bg ts-item' data-tsmeta='crossfit' id='cell_{$day}_{$time}'>";
+                // Fetch the class for that day and time slot
+                $query = "SELECT * FROM class_schedule WHERE day_of_week = '$day' AND time_slot = '$time'";
+                $result = mysqli_query($conn, $query);
+                if (mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    echo "<span>{$row['start_time']} - {$row['end_time']}</span><h6>{$row['class_name']}</h6>";
+					echo "<div class='action-buttons'>";
+                    echo "<button class='btn btn-sm btn-warning' onclick='editClass({$row['id']})'>Edit</button>";
+                    echo "<button class='btn btn-sm btn-danger' onclick='deleteClass({$row['id']})'>Delete</button>";
+					echo "</div>";
+                }
+                echo "</td>";
+            }
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
+<!-- Add/Edit Class Form (hidden by default) -->
+<div id="classForm" style="display:none;">
+    <h6 class="mb-0" id="formTitle">Add Class</h6>
+    <form id="classFormFields" onsubmit="return saveClass()">
+        <label for="day">Day:</label>
+        <select id="day" name="day">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select><br><br>
+        
+        <label for="time">Time Slot:</label>
+        <select id="time" name="time">
+            <option value="10:00:00">10:00</option>
+            <option value="14:00:00">14:00</option>
+            <option value="16:00:00">16:00</option>
+            <option value="18:00:00">18:00</option>
+            <option value="20:00:00">20:00</option>
+        </select><br><br>
+        
+        <label for="start_time">Start Time:</label>
+        <input type="time" id="start_time" name="start_time" required><br><br>
+
+        <label for="end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" required><br><br>
+        
+        <label for="class_name">Class Name:</label>
+        <input type="text" id="class_name" name="class_name" required><br><br>
+        
+        <input type="hidden" id="class_id" name="class_id">
+        <button type="submit">Save</button>
+        <button type="button" onclick="hideClassForm()">Cancel</button>
+    </form>
+</div>
+
+<script>
+    function showAddClassForm() {
+        document.getElementById('classForm').style.display = 'block';
+        document.getElementById('formTitle').innerText = 'Add Class';
+        document.getElementById('classFormFields').reset();
+    }
+
+    function hideClassForm() {
+        document.getElementById('classForm').style.display = 'none';
+    }
+
+    function editClass(id) {
+        // Fetch the class details using AJAX and populate the form fields
+        document.getElementById('classForm').style.display = 'block';
+        document.getElementById('formTitle').innerText = 'Edit Class';
+        
+        // Make an AJAX call to fetch the details for the class
+        fetch(`fetch_class.php?id=${id}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('day').value = data.day_of_week;
+            document.getElementById('time').value = data.time_slot;
+            document.getElementById('start_time').value = data.start_time;
+            document.getElementById('end_time').value = data.end_time;
+            document.getElementById('class_name').value = data.class_name;
+            document.getElementById('class_id').value = data.id;
+        });
+    }
+
+    function deleteClass(id) {
+        if (confirm('Are you sure you want to delete this class?')) {
+            window.location.href = `delete_class.php?id=${id}`;
+        }
+    }
+
+    function saveClass() {
+        const form = document.getElementById('classFormFields');
+        const formData = new FormData(form);
+        fetch('save_class.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.reload();
+            } else {
+                alert('Error saving class');
+            }
+        });
+        return false; // Prevent default form submission
+    }
+</script>
+</div>
 
 
-            <!-- Widgets Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
+            <!-- Table End -->
+<div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
+							
                         </div>
+                        
                     </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
-            <!-- Widgets End -->
-
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
