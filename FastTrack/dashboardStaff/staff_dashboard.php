@@ -56,7 +56,7 @@
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">Wong</h6>
-                        <span>Admin</span>
+                        <span>Staff</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -165,7 +165,7 @@
                             <span class="d-none d-lg-inline-flex">Wong</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <li><a href="./viewprofileAdmin.php">View profile</a></li>
+                            <li><a href="./viewprofileStaff.php">View profile</a></li>
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
@@ -188,7 +188,6 @@
 			
 			<div class="classtime-table">
 			<!--i edit here-->
-
 
 <!-- The Schedule Table -->
 <table>
