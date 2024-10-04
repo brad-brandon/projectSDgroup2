@@ -182,16 +182,9 @@
                         <h6 class="mb-0">Classes Table</h6>
                         <a href="">Show All</a>
                     </div>
-                    <img src="img/classtimetable.png" alt="Class Time" width="1000" height="auto">
-                </div>
-            </div>
-			
-			<div class="classtime-table">
-			<!--i edit here-->
-
-
-<!-- The Schedule Table -->
-<table>
+					
+<div class="classtime-table">
+<table class= "myTable">
     <thead>
         <tr>
             <th>Time</th>
@@ -228,6 +221,77 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 if (mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
                     echo "<span>{$row['start_time']} - {$row['end_time']}</span><h6>{$row['class_name']}</h6>";
+					
+                }
+                echo "</td>";
+            }
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>
+</div >
+
+                   <!-- <img src="img/classtimetable.png" alt="Class Time" width="1000" height="auto">-->
+                </div>
+            </div>
+			
+			<div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Edit Table</h6>
+                        <a href="">Show All</a>
+                    </div>
+					
+<div class="classtime-table">
+			<!--i edit here-->
+
+
+<!-- The Schedule Table -->
+<!-- Start Styles. Move the 'style' tags and everything between them to between the 'head' tags -->
+<style type="text/css">
+
+
+.myTable td, .myTable th { border:1px solid #000; }
+</style>
+<!-- End Styles -->
+<table class="myTable">
+    <thead>
+        <tr >
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- PHP Loop to fetch schedule from the database -->
+        <?php
+		$servername = "localhost";
+$username = "root";  // adjust your database credentials
+$password = "root";
+$dbname = "fasttrack_gym";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+        $time_slots = ['10:00:00', '14:00:00', '16:00:00', '18:00:00', '20:00:00'];
+        $days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        foreach ($time_slots as $time) {
+            echo "<tr >";
+            echo "<td class='workout-time'>" . date('H:i', strtotime($time)) . "</td>";
+            foreach ($days_of_week as $day) {
+                echo "<td class='hover-bg ts-item' data-tsmeta='crossfit' id='cell_{$day}_{$time}'>";
+                // Fetch the class for that day and time slot
+                $query = "SELECT * FROM class_schedule WHERE day_of_week = '$day' AND time_slot = '$time'";
+                $result = mysqli_query($conn, $query);
+                if (mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    echo "<span>{$row['start_time']} - {$row['end_time']}</span><h6>{$row['class_name']}</h6>";
 					echo "<div class='action-buttons'>";
                     echo "<button class='btn btn-sm btn-warning' onclick='editClass({$row['id']})'>Edit</button>";
                     echo "<button class='btn btn-sm btn-danger' onclick='deleteClass({$row['id']})'>Delete</button>";
@@ -243,8 +307,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 <!-- Add/Edit Class Form (hidden by default) -->
 <div id="classForm" style="display:none;">
-    <h6 class="mb-0" id="formTitle">Add Class</h6>
-    <form id="classFormFields" onsubmit="return saveClass()">
+    <h6 class="mb-0" id="formTitle" style="background-color:#060614">Add Class</h6>
+	
+    <form id="classFormFields" style="background-color:#060614" onsubmit="return saveClass()">
         <label for="day">Day:</label>
         <select id="day" name="day">
             <option value="Monday">Monday</option>
@@ -275,11 +340,28 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <input type="text" id="class_name" name="class_name" required><br><br>
         
         <input type="hidden" id="class_id" name="class_id">
-        <button type="submit">Save</button>
-        <button type="button" onclick="hideClassForm()">Cancel</button>
+		       
+        <button class="btn btn-sm btn-warning" type="submit">Save</button>
+        <button class="btn btn-sm btn-danger" type="button" onclick="hideClassForm()">Cancel</button>
     </form>
+
 </div>
 
+</div>
+		</div>
+
+	
+<div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
+							
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
 <script>
     function showAddClassForm() {
         document.getElementById('classForm').style.display = 'block';
@@ -333,21 +415,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         return false; // Prevent default form submission
     }
 </script>
-</div>
 
 
             <!-- Table End -->
-<div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
-							
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -368,7 +439,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
+ 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -382,6 +453,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+	
 </body>
 
 </html>
