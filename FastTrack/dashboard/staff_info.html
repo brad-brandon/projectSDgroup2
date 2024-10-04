@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Gym Dashboard</title>
+    <title>Gym Dashboard | Edit Staff</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -59,16 +59,12 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                       
-                    </div>
+                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Customer Info</a>
-					<a href="staff_info.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Staff Info</a>
+					<a href="staff_info.html" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Staff Info</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Membership</a>
                     <a href="admin_dashboard.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Class</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Personal Training</a>
-                    
                 </div>
             </nav>
         </div>
@@ -95,16 +91,9 @@
                             <span class="d-none d-lg-inline-flex">Message</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-						
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">View Profile</span>
-						
-						</a>
-						
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/WONG.png" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -175,65 +164,51 @@
             <!-- Navbar End -->
 
 
-            <!-- Sales Chart Start -->
+            <!-- Widget Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">View User Feedback</h6>
-                                <a href="" class= "btn-primary btn-sm">Click Here</a>
-                            </div>
-                          
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Customer Info</h6>
-                                <a href="widget.html" class= "btn-primary btn-sm">Click Here</a>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row g-4">
+        <div class="col-sm-12 col-md-6">
+            <div class="h-100 bg-secondary rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <!-- Customer Data Table -->
+                    <h3 class="mb-4">Staff Data</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table data will go here -->
+                            <!-- Example Row -->
+                            <tr>
+                                <td>1</td>
+                                <td>Wong</td>
+                                <td>wong@example.com</td>
+                                <td>123-456-7890</td>
+                                <td>UTM</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+			<td><a href="#" class="btn btn-primary btn-sm">Add Staff</a></td>		
+			<td><a href="#" class="btn btn-primary btn-sm">Edit Staff Info</a></td>
+			<td><a href="#" class="btn btn-primary btn-sm">Delete Inactive Staff</a></td>
                 </div>
             </div>
-            <!-- Sales Chart End -->
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Classes Table</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <img src="img/classtimetable.png" alt="Class Time" width="1000" height="auto">
-                </div>
-            </div>
-            <!-- Recent Sales End -->
-
-
-            <!-- Widgets Start -->
-            
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">FastTrack Gym</a>, All Right Reserved. 
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
         </div>
-        <!-- Content End -->
+    </div>
+</div>
 
-
-        <!-- Back to Top -->
+		
+		
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
