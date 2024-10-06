@@ -60,11 +60,11 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                        
                     </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Customer Info</a>
+                    <a href="customer.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Customer Info</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Membership</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Class</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Personal Training</a>
@@ -165,7 +165,7 @@
                             <span class="d-none d-lg-inline-flex">Wong</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <li><a href="./viewprofileAdmin.php">View profile</a></li>
+                            <li><a href="./viewprofileStaff.php">View profile</a></li>
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
