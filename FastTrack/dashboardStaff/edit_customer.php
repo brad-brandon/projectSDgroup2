@@ -67,17 +67,40 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Edit Customer</title>
+    <link rel = "stylesheet" href = "css/edit_customer.css">
 </head>
 <body>
-    <h2>Edit Customer</h2>
-    <form method="post" action="">
+    <div class = "header-section">
+        <h2>Customer Information</h2>
+    </div>
+
+    <div class = "form-section">
+    <div class="form-wrap">
+    <h3>Edit Customer</h3>
+    <form method="POST" action="edit_customer.php">
+        <form method="POST" action="edit_customer.php">
+        
+        <div class = "group-input">
         <label for="full_name">Name:</label>
-        <input type="text" name="full_name" value="<?php echo $full_name; ?>" required><br>
+        <input type="text" name="full_name" value="<?php echo $full_name; ?>" required>
+        </div>
+
+        <div class = "group-input">
         <label for="email">Email:</label>
-        <input type="email" name="email" value="<?php echo $email; ?>" required><br>
+        <input type="email" name="email" value="<?php echo $email; ?>" required>
+        </div>
+
+        <div class = "group-input">
         <label for="phoneNo">Phone No:</label>
-        <input type="text" name="phoneNo" value="<?php echo $phoneNo; ?>" required><br>
-        <input type="submit" name="update" value="Update">
+        <input type="text" name="phoneNo" value="<?php echo $phoneNo; ?>" required>
+        </div>
+        <input type="submit" class="site-btn" name="update" value="Update">
     </form>
+    </div>
+    </div>
+
+    <div class="footer-section">
+        <p>&copy; 2024 FastTrack Gym. All rights reserved.</p>
+    </div>
 </body>
 </html>

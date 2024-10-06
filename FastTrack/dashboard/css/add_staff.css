@@ -1,0 +1,100 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-section {
+    text-align: center;
+    padding: 20px;
+    background: #1d1d1d;
+}
+
+.header-section h2 {
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-wrap {
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.form-wrap h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.group-input {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.group-input label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.group-input input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #333;
+}
+
+.group-input input::placeholder {
+    color: #888;
+}
+
+.site-btn {
+    background-color: #e50914;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 103%;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.site-btn:hover {
+    background-color: #f01f1f;
+}
+
+.footer-section {
+    text-align: center;
+    padding: 10px;
+    background: #1d1d1d;
+}
+
+.footer-section p {
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+}

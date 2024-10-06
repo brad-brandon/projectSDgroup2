@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.header-section {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #111, #1d1d1d, #111);
+    border-bottom: 2px solid #e50914;
+    box-shadow: 0 4px 15px rgba(255, 0, 100, 0.4);
+}
+
+.header-section h2 {
+    margin: 0;
+    color: #e50914;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
+    letter-spacing: 2px;
+}
+
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #151515, #1d1d1d);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 255, 255, 0.1);
+    transform: rotate(45deg);
+    animation: backgroundAnim 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes backgroundAnim {
+    0% { transform: rotate(45deg) translate(0, 0); }
+    50% { transform: rotate(45deg) translate(50px, 50px); }
+    100% { transform: rotate(45deg) translate(0, 0); }
+}
+
+.form-wrap {
+    background: rgba(31, 31, 31, 0.9);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.form-wrap h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-size: 1.8rem;
+}
+
+.group-input {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.group-input label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.group-input input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #202020;
+    transition: box-shadow 0.3s ease;
+}
+
+.group-input input:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    outline: none;
+}
+
+.group-input input::placeholder {
+    color: #888;
+}
+
+.site-btn {
+    background: linear-gradient(90deg, #e50914, #ff2020);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 105%;
+    margin-bottom: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.site-btn:hover {
+    background: linear-gradient(90deg, #ff2020, #ff5050);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
+}
+
+.footer-section {
+    text-align: center;
+    padding: 20px;
+    background: #1d1d1d;
+    border-top: 2px solid #e50914;
+    box-shadow: 0 -4px 15px rgba(255, 0, 100, 0.4);
+}
+
+.footer-section p {
+    color: #aaa;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-section p span {
+    color: #e50914;
+}
+
+/* Animation for background neon effects */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff007f, 0 0 15px #ff007f;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff007f, 0 0 15px #ff007f;
+    }
+}

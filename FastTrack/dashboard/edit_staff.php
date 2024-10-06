@@ -42,21 +42,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Staff</title>
+    <link rel="stylesheet" href="css/edit_staff.css">
 </head>
 <body>
-    <h2>Edit Staff</h2>
-    <form method="POST" action="edit_staff.php?id=<?php echo $id; ?>">
-        <label for="full_name">Full Name:</label><br>
-        <input type="text" id="full_name" name="full_name" value="<?php echo $staff['full_name']; ?>" required><br><br>
+    <div class="form-section">
+        <div class="form-wrap">
+            <h3>Edit Staff</h3>
+            <form method="POST" action="edit_staff.php?id=<?php echo $id; ?>">
+                <div class="group-input">
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" value="<?php echo $staff['full_name']; ?>" required>
+                </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value="<?php echo $staff['email']; ?>" required><br><br>
+                <div class="group-input">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<?php echo $staff['email']; ?>" required>
+                </div>
 
-        <label for="phoneNo">Phone No:</label><br>
-        <input type="text" id="phoneNo" name="phoneNo" value="<?php echo $staff['phoneNo']; ?>" required><br><br>
+                <div class="group-input">
+                    <label for="phoneNo">Phone No:</label>
+                    <input type="text" id="phoneNo" name="phoneNo" value="<?php echo $staff['phoneNo']; ?>" required>
+                </div>
 
-        <input type="submit" value="Update Staff">
-    </form>
+                <input type="submit" value="Update Staff" class="site-btn">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
+

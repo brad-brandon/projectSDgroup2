@@ -1,0 +1,113 @@
+body {
+    background-color: #0e0e0e;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); /* Futuristic font */
+
+.container {
+    background-color: #1a1a1a;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(255, 50, 0), 0 0 60px rgba(0, 255, 255, 0.1); /* Neon-like glow */
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 50, 0);
+    text-align: center;
+}
+
+h2 {
+    color: #ed6517;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5em;
+    text-shadow: 0 0 8px rgba(255, 55, 0, 0.8); /* Neon effect */
+}
+
+.table {
+    background-color: #262626;
+    color: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.table thead th {
+    background-color: #333;
+    color: #e56109;
+    font-weight: 700;
+    padding: 20px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e50914;
+    position: relative;
+}
+
+.table thead th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #e50914, transparent);
+    animation: glow 3s infinite;
+}
+
+.table tbody td {
+    background-color: #1a1a1a;
+    padding: 20px;
+    font-size: 1em;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #333; /* Hover effect */
+}
+
+.table tbody td:hover {
+    background-color: #e50914;
+    color: #000;
+    transition: 0.3s ease;
+}
+
+.table-bordered th, .table-bordered td {
+    border: none; /* Remove default borders */
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Futuristic scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}

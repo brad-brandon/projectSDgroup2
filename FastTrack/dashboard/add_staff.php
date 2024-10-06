@@ -38,23 +38,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Add Staff</title>
+    
+    <link rel="stylesheet" href="css/add_staff.css">
 </head>
 <body>
-    <h2>Add New Staff</h2>
-    <form method="POST" action="add_staff.php">
-        <label for="full_name">Full Name:</label><br>
-        <input type="text" id="full_name" name="full_name" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <div class="header-section">
+        <h2>Add New Staff</h2>
+    </div>
 
-        <label for="phoneNo">Phone No:</label><br>
-        <input type="text" id="phoneNo" name="phoneNo" required><br><br>
+    <div class="form-section">
+        <div class="form-wrap">
+            <h3>New Staff Registration Form</h3>
+            <form method="POST" action="add_staff.php">
+                <div class="group-input">
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter full name" required>
+                </div>
+                <div class="group-input">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="group-input">
+                    <label for="phoneNo">Phone No:</label>
+                    <input type="text" id="phoneNo" name="phoneNo" placeholder="Enter phone number" required>
+                </div>
+                <div class="group-input">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                <input type="submit" class="site-btn" value="Add Staff">
+            </form>
+        </div>
+    </div>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+    <div class="footer-section">
+        <p>&copy; 2024 FastTrack Gym. All rights reserved.</p>
+    </div>
 
-        <input type="submit" value="Add Staff">
-    </form>
 </body>
 </html>
