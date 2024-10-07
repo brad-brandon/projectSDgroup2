@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Membership - Gym Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/membership.css" type="text/css">
+    <link rel="stylesheet" href="css/membership.css" type="text/css">
+</head>
 <body>
 
 <header class="header-section">
-        <div class="logo">
-            <a href="./index.html">
-                <img src="img/logo3.png" alt="FastTrack Gym Logo">
-            </a>
-        </div>
-    </header>
+    <div class="logo">
+        <a href="./index.html">
+            <img src="img/logo3.png" alt="FastTrack Gym Logo">
+        </a>
+    </div>
+</header>
 
 <div class="membership-container">
     <h1>Select Your Membership</h1>
 
-    <form action="payment.html" method="GET">
+    <form id="membershipForm" action="payment.html" method="GET">
         <!-- Student Membership Option -->
         <div class="membership-option">
             <input type="radio" id="student" name="membership" value="student" required>
@@ -45,5 +46,6 @@
     </form>
 </div>
 
+<script src="js/membership.js"></script>
 </body>
-</html>	
+</html>

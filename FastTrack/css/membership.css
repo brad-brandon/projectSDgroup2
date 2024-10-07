@@ -1,78 +1,152 @@
 body {
-            font-family: 'Nunito Sans', sans-serif;
-            background-color: #121212;
-            color: #fff;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-		
-		.header-section .logo img {
-		width: 200px; /* Adjust width as needed */
-		height: auto; /* Maintains the aspect ratio */
-		}
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
-        .membership-container {
-            width: 100%;
-            max-width: 600px;
-            background-color: #1f1f1f;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            margin-top: 50px;
-        }
+.header-section .logo img {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintains the aspect ratio */
+}
 
-        .membership-container h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
+.membership-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
 
-        .membership-option {
-            background-color: #2c2c2c;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            text-align: center;
-        }
+.membership-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
 
-        .membership-option:hover {
-            border-color: #e50914;
-        }
+.membership-option {
+    background-color: #2c2c2c;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+    position: relative; /* For better control of the radio button positioning */
+}
 
-        .membership-option input {
-            display: none;
-        }
+/* Highlight the selected option */
+.membership-option input:checked + label {
+    border-color: #e50914;
+    background-color: #3a3a3a; /* Slight color change to indicate selection */
+}
 
-        .membership-option label {
-            display: block;
-            font-weight: 600;
-        }
+.membership-option input {
+    display: none; /* Hide the default radio button */
+}
 
-        .membership-option .price {
-            font-size: 18px;
-            margin-top: 5px;
-            color: #888;
-        }
+.membership-option label {
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-        .next-btn {
-            background-color: #e50914;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 700;
-            cursor: pointer;
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 150px;
-        }
+.membership-option .price {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #888;
+}
 
-        .next-btn:hover {
-            background-color: #f01f1f;
-        }
+/* Style the button */
+.next-btn {
+    background-color: #e50914;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 150px;
+}
+
+.next-btn:hover {
+    background-color: #f01f1f;
+}
+
+/* Adjust hover state for membership options */
+.membership-option:hover {
+    border-color: #e50914;
+}
+
+/* Add transition for smoother effect */
+.membership-option,
+.next-btn {
+    transition: all 0.3s ease;
+}
+
+.membership-option {
+    background-color: #2c2c2c;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+    position: relative; /* For better control of the radio button positioning */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Add hover effect */
+.membership-option:hover {
+    border-color: #e50914;
+}
+
+/* Add styles for the selected membership option */
+.membership-option.selected {
+    border-color: #e50914;
+    background-color: #3a3a3a; /* New color for selected membership */
+}
+
+/* Hide radio buttons */
+.membership-option input {
+    display: none;
+}
+
+.membership-option label {
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.membership-option .price {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #888;
+}
+
+.next-btn {
+    background-color: #e50914;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 150px;
+}
+
+.next-btn:hover {
+    background-color: #f01f1f;
+}
