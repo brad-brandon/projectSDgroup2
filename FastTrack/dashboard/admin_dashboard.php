@@ -139,7 +139,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
@@ -308,9 +308,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 <!-- Add/Edit Class Form (hidden by default) -->
 <div id="classForm" style="display:none;">
-    <h6 class="mb-0" id="formTitle" style="background-color:#060614">Add Class</h6>
+    <h6 class="mb-0" id="formTitle" >Add Class</h6>
 	
-    <form id="classFormFields" style="background-color:#060614" onsubmit="return saveClass()">
+    <form id="classFormFields" onsubmit="return saveClass()">
         <label for="day">Day:</label>
         <select id="day" name="day">
             <option value="Monday">Monday</option>
@@ -365,10 +365,87 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
 <script>
     function showAddClassForm() {
-        document.getElementById('classForm').style.display = 'block';
-        document.getElementById('formTitle').innerText = 'Add Class';
-        document.getElementById('classFormFields').reset();
-    }
+    const classForm = document.getElementById('classForm');
+    
+    // Style the form container
+    classForm.style.display = 'block';
+    classForm.style.backgroundColor = '#1a1a1d';  // Dark background for futuristic look
+    classForm.style.color = '#f0f0f0';            // Light text color
+    classForm.style.padding = '20px';
+    classForm.style.borderRadius = '10px';        // Rounded corners
+    classForm.style.boxShadow = '0 0 15px 3px #ff4500';  // Fire-like glow
+    classForm.style.width = '400px';              // Set form width to be compact
+    classForm.style.margin = '0 auto';            // Center the form
+    classForm.style.marginTop = '30px';
+    
+    // Style the form title
+    const formTitle = document.getElementById('formTitle');
+    formTitle.style.textAlign = 'center';         // Center the title
+    formTitle.style.color = '#ff4500';            // Fire orange color
+    formTitle.style.fontFamily = 'Arial, sans-serif';
+    formTitle.style.textShadow = '0 0 10px #ff4500';  // Glowing effect for title
+
+    // Style individual input fields and selects
+    const inputs = classForm.querySelectorAll('input, select');
+    inputs.forEach(input => {
+        input.style.width = '90%';                    // Make inputs shorter
+        input.style.padding = '10px';                 // Padding inside inputs
+        input.style.marginBottom = '15px';            // Space between inputs
+        input.style.border = '1px solid #ff4500';     // Fire-orange border
+        input.style.borderRadius = '8px';             // Rounded corners for inputs
+        input.style.backgroundColor = '#333';         // Dark background for inputs
+        input.style.color = '#fff';                   // White text color
+        input.style.boxShadow = '0 0 8px #ff4500';    // Fire-like glow around inputs
+        input.style.transition = 'box-shadow 0.3s ease'; // Smooth hover effect
+
+        // Add hover effect
+        input.onmouseover = function() {
+            input.style.boxShadow = '0 0 12px #ff5733'; // Brighten glow on hover
+        };
+        input.onmouseout = function() {
+            input.style.boxShadow = '0 0 8px #ff4500';  // Back to original glow
+        };
+    });
+
+    // Style buttons
+    const buttons = classForm.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.style.padding = '10px 20px';            // Button padding
+        button.style.marginTop = '10px';               // Space above buttons
+        button.style.borderRadius = '8px';             // Rounded corners for buttons
+        button.style.cursor = 'pointer';               // Pointer cursor on hover
+        button.style.border = 'none';                  // No border
+        button.style.color = '#fff';                   // White text for buttons
+        button.style.boxShadow = '0 0 12px #ff4500';   // Glow around buttons
+        button.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
+
+        // Different styles for warning (Save) and danger (Cancel) buttons
+        if (button.classList.contains('btn-warning')) {
+            button.style.backgroundColor = '#ff4500'; // Fire-like orange
+            button.onmouseover = function() {
+                button.style.backgroundColor = '#ff5733'; // Lighter orange on hover
+            };
+            button.onmouseout = function() {
+                button.style.backgroundColor = '#ff4500'; // Back to original orange
+            };
+        } else if (button.classList.contains('btn-danger')) {
+            button.style.backgroundColor = '#dc3545';   // Fire-like red
+            button.onmouseover = function() {
+                button.style.backgroundColor = '#e74c3c'; // Lighter red on hover
+            };
+            button.onmouseout = function() {
+                button.style.backgroundColor = '#dc3545'; // Back to original red
+            };
+        }
+    });
+
+    document.getElementById('formTitle').innerText = 'Add Class';
+    document.getElementById('classFormFields').reset();
+}
+
+
+// Other functions remain the same...
+
 
     function hideClassForm() {
         document.getElementById('classForm').style.display = 'none';

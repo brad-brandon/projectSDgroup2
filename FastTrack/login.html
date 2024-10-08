@@ -10,12 +10,11 @@
     <title>FastTrack Gym | Login</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/login.css" type="text/css">
 
 </head>
@@ -34,40 +33,36 @@
 
     <!-- Login Section Begin -->
     <section class="login-section">
-    <div class="login-form-wrap">
-        <h3>Login Now</h3>
-        <form action="login.php" method="POST" class="login-form">
-    <div class="group-input">
-        <label for="email">Email address *</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    </div>
-    <div class="group-input">
-        <label for="pass">Password *</label>
-        <input type="password" id="pass" name="password" placeholder="Enter your password" required>
-    </div>
-    <div class="gi-check">
-        <label for="remember-me">
-            <input type="checkbox" id="remember-me" name="remember_me"> Remember Me
-        </label>
-        <a href="forgot_password.html" class="forget-pass">Forgot your password?</a>
-    </div>
-    <button type="submit" class="site-btn">Login</button>
-</form>
+        <div class="login-form-wrap">
+            <h3>Login Now</h3>
+            <form action="login.php" method="POST" class="login-form">
+                <div class="group-input">
+                    <label for="email">Email address *</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="group-input">
+                    <label for="pass">Password *</label>
+                    <input type="password" id="pass" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="gi-check">
+                    <label for="remember-me">
+                        <input type="checkbox" id="remember-me" name="remember_me"> Remember Me
+                    </label>
+                    <a href="forgot_password.html" class="forget-pass">Forgot your password?</a>
+                </div>
+                <button type="submit" class="site-btn">Login</button>
+            </form>
 
+            <div class="switch-signup">
+                <span>Don't have an account?</span> 
+                <a href="./signup.html" class="or-signup">Sign Up</a>
+            </div>
 
-        <!-- Add the links here -->
-        <div class="switch-signup">
-            <span>Don't have an account?</span> 
-            <a href="./signup.html" class="or-signup">Sign Up</a>
+            <div class="switch-login">
+                <a href="./index.html" class="or-login">Back to Homepage</a>
+            </div>
         </div>
-
-        <div class="switch-login">
-            <a href="./index.html" class="or-login">Back to Homepage</a>
-        </div>
-        <!-- End of added links -->
-
-    </div>
-	</section>
+    </section>
     <!-- Login Section End -->
 
     <!-- Footer Section Begin -->

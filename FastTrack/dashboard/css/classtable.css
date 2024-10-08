@@ -111,6 +111,7 @@
         width: 80px;
     }
 }
+
 .add-class-btn {
     margin-right: auto; /* This pushes the button to the right */
     padding: 10px 20px;
@@ -125,4 +126,100 @@
 
 .add-class-btn:hover {
     background-color: #218838;
+}
+
+/* Form Styling */
+#classForm {
+    display: none;
+    background-color: #060614;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+#classForm h6 {
+    background-color: #060614;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px 8px 0 0;
+}
+
+#classFormFields {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1d;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+#classFormFields label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #c0c0c0;
+}
+
+#classFormFields select, 
+#classFormFields input[type="time"],
+#classFormFields input[type="text"] {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #1e1e22;
+    color: #fff;
+    font-size: 14px;
+}
+
+#classFormFields button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#classFormFields .btn-warning {
+    background-color: #f0ad4e;
+    border: none;
+    color: #fff;
+}
+
+#classFormFields .btn-danger {
+    background-color: #d9534f;
+    border: none;
+    color: #fff;
+}
+
+#classFormFields .btn-warning:hover,
+#classFormFields .btn-danger:hover {
+    opacity: 0.9;
+}
+
+/* Style for Add Class button outside the form */
+.add-class-btn {
+    font-size: 14px;
+    padding: 10px 16px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.add-class-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #classForm {
+        width: 90%;
+    }
+
+    #classFormFields {
+        padding: 15px;
+    }
 }

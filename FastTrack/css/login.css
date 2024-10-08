@@ -1,139 +1,161 @@
+/* Futuristic Fiery CSS */
 body {
-            font-family: 'Nunito Sans', sans-serif;
-            background-color: #121212;
-            color: #fff;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    font-family: 'Montserrat', sans-serif; /* Google Font for a modern look */
+    background: linear-gradient(135deg, #ff5f6d, #ffc371); /* Fiery gradient background */
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden; /* Prevents overflow */
+}
 
-        .header-section {
-            text-align: center;
-            padding: 20px;
-            background: #1d1d1d;
-        }
+.logo img {
+    max-width: 80px; /* Set a new maximum width for general use */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the logo if needed */
+    margin: 0 auto; /* Center the logo horizontally */
+}
 
-        .header-section .logo img {
-            max-width: 150px;
-        }
+.header-section {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for header */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
-        .login-section {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+.header-section .logo img {
+    max-width: 100px; /* Set a new maximum width specifically for the header */
+}
 
-        .login-form-wrap {
-            background: #1f1f1f;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
+.login-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        .login-form-wrap h3 {
-            margin-bottom: 20px;
-            font-weight: 700;
-            color: #fff;
-        }
+.login-form-wrap {
+    background: rgba(30, 30, 30, 0.8); /* Semi-transparent dark background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Blurred background for depth */
+    border: 2px solid #ff5f6d; /* Fiery border */
+}
 
-        .group-input {
-            margin-bottom: 20px;
-            text-align: left;
-        }
+.login-form-wrap h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 95, 109, 0.8); /* Glowing text effect */
+}
 
-        .group-input label {
-            font-weight: 600;
-            font-size: 14px;
-            color: #ccc;
-        }
+.group-input {
+    margin-bottom: 20px;
+    text-align: left;
+}
 
-        .group-input input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #333;
-            margin-top: 5px;
-            font-size: 14px;
-            color: #fff;
-            background-color: #333;
-        }
+.group-input label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffc371; /* Lighter color for labels */
+}
 
-        .group-input input::placeholder {
-            color: #888;
-        }
+.group-input input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ff5f6d;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent input */
+    transition: border 0.3s ease, background 0.3s ease; /* Transition for input */
+}
 
-        .gi-check {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.group-input input:focus {
+    border: 2px solid #ffc371; /* Highlight border on focus */
+    background-color: rgba(255, 255, 255, 0.2); /* Brighten background on focus */
+    outline: none;
+}
 
-        .gi-check label {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            color: #ccc;
-        }
+.group-input input::placeholder {
+    color: #888; /* Placeholder color */
+}
 
-        .gi-check input[type="checkbox"] {
-            margin-right: 5px;
-        }
+.gi-check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .forget-pass {
-            font-size: 14px;
-            color: #888;
-        }
+.gi-check label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ccc;
+}
 
-        .site-btn {
-            background-color: #e50914;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-        }
+.gi-check input[type="checkbox"] {
+    margin-right: 5px;
+}
 
-        .site-btn:hover {
-            background-color: #f01f1f;
-        }
+.forget-pass {
+    font-size: 14px;
+    color: #ffc371; /* Color for forgot password */
+}
 
-        .switch-login,
-        .switch-signup {
-            margin-top: 15px;
-        }
+.site-btn {
+    background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Gradient button */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: transform 0.2s, background 0.3s; /* Transform for hover */
+}
 
-        .or-login,
-        .or-signup {
-            font-size: 14px;
-            color: #ccc;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
+.site-btn:hover {
+    background: linear-gradient(90deg, #ffc371, #ff5f6d); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight scale effect */
+}
 
-        .or-login:hover,
-        .or-signup:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
+.switch-login,
+.switch-signup {
+    margin-top: 15px;
+}
 
-        .footer-section {
-            text-align: center;
-            padding: 10px;
-            background: #1d1d1d;
-        }
+.or-login,
+.or-signup {
+    font-size: 14px;
+    color: #ffc371; /* Color for links */
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
 
-        .footer-section p {
-            color: #888;
-            font-size: 14px;
-            margin: 0;
-        }
+.or-login:hover,
+.or-signup:hover {
+    color: #fff; /* Change color on hover */
+    text-decoration: underline;
+}
+
+.footer-section {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Dark footer */
+}
+
+.footer-section p {
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+}
