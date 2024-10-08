@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 29, 2024 at 11:02 AM
+-- Generation Time: Oct 08, 2024 at 01:58 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.3.0
 
@@ -41,8 +41,8 @@ CREATE TABLE `class_schedule` (
 --
 
 INSERT INTO `class_schedule` (`id`, `day_of_week`, `time_slot`, `class_name`, `start_time`, `end_time`) VALUES
-(1, 'Monday', '10:00:00', 'class mon', '10:00:00', '14:00:00'),
-(2, 'Sunday', '20:00:00', 'class', '20:03:00', '21:03:00');
+(2, 'Sunday', '20:00:00', 'class', '20:03:00', '21:03:00'),
+(5, 'Tuesday', '16:00:00', 'Gym', '16:00:00', '20:00:00');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +62,7 @@ ALTER TABLE `class_schedule`
 -- AUTO_INCREMENT for table `class_schedule`
 --
 ALTER TABLE `class_schedule`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
