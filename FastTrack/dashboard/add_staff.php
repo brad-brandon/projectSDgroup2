@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phoneNo = $_POST['phoneNo'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password for security
 
-    // Insert query with user_type explicitly set to 'staff'
-    $sql = "INSERT INTO users (full_name, email, phoneNo, password, user_type) 
-            VALUES ('$full_name', '$email', '$phoneNo', '$password', 'staff')";
+    // Insert query with user_type set to 'staff' and verified set to 1 (default)
+    $sql = "INSERT INTO users (full_name, email, phoneNo, password, user_type, verified) 
+            VALUES ('$full_name', '$email', '$phoneNo', '$password', 'staff', 1)";
 
     if ($conn->query($sql) === TRUE) {
         echo "New staff added successfully!";
