@@ -77,8 +77,8 @@ $conn->close();
     <div class = "form-section">
     <div class="form-wrap">
     <h3>Edit Customer</h3>
-    <form method="POST" action="edit_customer.php">
-        <form method="POST" action="edit_customer.php">
+   
+        <form method="POST" action="">
         
         <div class = "group-input">
         <label for="full_name">Name:</label>

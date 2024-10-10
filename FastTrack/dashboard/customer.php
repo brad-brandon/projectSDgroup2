@@ -143,10 +143,10 @@
                             <tbody>
                                 <?php
                                 // Database connection
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "root";
-                                $dbname = "fasttrack_gym";
+                               $servername = "localhost";
+$username = "Webs392024";
+$password = "Webs392024";
+$dbname = "fasttrack_gym";
 
                                 // Create connection
                                 $conn = new mysqli($servername, $username, $password, $dbname);

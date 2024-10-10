@@ -29,7 +29,7 @@ $confirm_password = $_POST['confirm_password'];
 
 // Validate that new password and confirm password match
 if ($new_password !== $confirm_password) {
-    header("Location: verify_result.php?message=" . urlencode("New password and confirm password do not match."));
+    header("Location: ../verify_result.php?message=" . urlencode("New password and confirm password do not match."));
     exit();
 }
 
@@ -44,7 +44,7 @@ $stmt->close();
 
 // Verify the current password
 if (!password_verify($current_password, $hashed_password)) {
-    header("Location: verify_result.php?message=" . urlencode("Current password is incorrect."));
+    header("Location: ../verify_result.php?message=" . urlencode("Current password is incorrect."));
     exit();
 }
 

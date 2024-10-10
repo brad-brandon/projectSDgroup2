@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "Webs392024";
-$password = "Webs392024";
+$servername = "localhost"; 
+$username = "Webs392024"; 
+$password = "Webs392024"; 
 $dbname = "fasttrack_gym";
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,7 +35,7 @@ $stmt = $conn->prepare("INSERT INTO feedback (name, email, message) VALUES (?, ?
 $stmt->bind_param("sss", $name, $email, $message);
 
 if ($stmt->execute()) {
-    header("Location: verify_result.php?message=" . urlencode("Thank you for your feedback! A confirm email has been sent to your email address."));
+    header("Location: verify_result.php?message=" . urlencode("Thank you for your feedback!"));
                 exit();
 }
 
