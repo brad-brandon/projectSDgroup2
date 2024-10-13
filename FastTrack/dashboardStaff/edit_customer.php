@@ -95,6 +95,10 @@ $conn->close();
         <input type="text" name="phoneNo" value="<?php echo $phoneNo; ?>" required>
         </div>
         <input type="submit" class="site-btn" name="update" value="Update">
+
+        <div class="mb-3">
+        <a href="./index.html" class="btn btn-primary">Back to Dashboard</a>
+    </div>
     </form>
     </div>
     </div>

@@ -68,6 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" id="password" name="password" placeholder="Enter password" required>
                 </div>
                 <input type="submit" class="site-btn" value="Add Staff">
+
+                <div class="">
+                    <a href="./index.html" class="btn btn-primary">Back to Dashboard</a>
+                </div>
+
             </form>
         </div>
     </div>

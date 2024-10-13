@@ -112,6 +112,20 @@ body {
     box-shadow: 0 0 15px rgba(229, 9, 20, 0.7), 0 0 25px rgba(229, 9, 20, 0.5);
 }
 
+.back-btn {
+    background-color: #0f53e6;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 105%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .form-wrap::before {
     content: '';
     position: absolute;

@@ -25,7 +25,7 @@ body {
 }
 
 .header-section .logo img {
-    max-width: 100px; /* Set a new maximum width specifically for the header */
+    max-width: 250px; /* Set a new maximum width specifically for the header */
 }
 
 .login-section {

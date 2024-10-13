@@ -10,6 +10,12 @@
 
 <div class="container">
     <h2>Customer Feedback</h2>
+
+    <div class="mb-3">
+        <a href="./index.html" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+
+
     <table class="table table-bordered">
         <thead>
             <tr>

@@ -67,6 +67,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <input type="submit" value="Update Staff" class="site-btn">
+                
+                <div class="">
+                    <a href="./index.html" class="btn btn-primary">Back to Dashboard</a>
+                    <style>
+                        body{
+                            background-color: #413838;
+                        }
+                    </style>
+                </div>
+
             </form>
         </div>
     </div>

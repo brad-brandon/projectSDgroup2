@@ -15,7 +15,7 @@ body {
 .header-section {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(90deg, #111, #1d1d1d, #111);
+    background: linear-gradient(90deg, #111, #1d1d1d, #6b4040);
     border-bottom: 2px solid #e50914;
     box-shadow: 0 4px 15px rgba(255, 0, 100, 0.4);
 }
@@ -132,6 +132,13 @@ body {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
 }
+
+
+.mb-3 .btn-primary{
+    background-color: #00ffff;
+}
+
+
 
 .footer-section {
     text-align: center;
