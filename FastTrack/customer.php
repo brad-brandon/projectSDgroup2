@@ -437,6 +437,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 				-->
             </div>
             <a href="bookTrainingClass.html" class="primary-btn price-btn">Book Class</a>
+            <a href="view-booking-history.php" class="primary-btn price-btn">Book History</a>
         </div>
 		
     </section>
