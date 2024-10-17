@@ -19,8 +19,7 @@
 
 <div class="membership-container">
     <h1>Select Your Membership</h1>
-
-    <form id="membershipForm" action="payment.html" method="GET">
+    <form id="membershipForm" action="membership_summary.php" method="POST">
         <!-- Student Membership Option -->
         <div class="membership-option">
             <input type="radio" id="student" name="membership" value="student" required>
@@ -46,6 +45,19 @@
     </form>
 </div>
 
-<script src="js/membership.js"></script>
+<script>
+    document.querySelectorAll('.membership-option').forEach(option => {
+        option.addEventListener('click', function() {
+            // Remove 'selected' class from all options
+            document.querySelectorAll('.membership-option').forEach(el => el.classList.remove('selected'));
+    
+            // Add 'selected' class to the clicked option
+            this.classList.add('selected');
+    
+            // Select the radio button associated with this option
+            this.querySelector('input[type="radio"]').checked = true;
+        });
+    });
+    </script>
 </body>
 </html>

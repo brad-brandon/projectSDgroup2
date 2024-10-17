@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #0d0d0d; /* Darker background for contrast */
+    color: #f0f0f0;
+    line-height: 1.6;
+    padding: 20px;
+    background-image: radial-gradient(circle, rgba(255,69,0,0.1), rgba(0,0,0,1)); /* A fiery subtle glow */
+}
+
+.header-section {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ff4500; /* Fiery accent */
+    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.2); /* Glowing effect */
+}
+.logo img {
+    max-width: 180px;
+    filter: drop-shadow(0 0 10px #ff4500); /* Neon glow on the logo */
+}
+
+h1 {
+    color: #ff4500; /* Fiery orange for the header */
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.profile-name{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff4500; /* Fiery glow on the name */
+}
+
+.profile-wrap {
+    background: linear-gradient(145deg, #262626, #1b1b1b);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(255, 69, 0, 0.3); /* Futuristic shadow effect */
+    width: 100%;
+    max-width: 600px;
+}
+
+.profile-info{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #ff6f00; /* Bright, fiery orange */
+    text-shadow: 0 0 5px rgba(255, 69, 0, 0.7); /* Glowing text */
+}
+
+.full-info{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #f0f0f0;
+}
+
+.pay-btn {
+    display: block;
+    background: linear-gradient(145deg, #ff4500, #c0392b); /* Fiery gradient */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5); /* Soft glow around buttons */
+    transition: background 0.3s ease-in-out;
+}
+
+.pay-btn:hover {
+    background: linear-gradient(145deg, #ff6347, #ff4500); /* Brighter on hover */
+}
