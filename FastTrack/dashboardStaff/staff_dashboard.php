@@ -138,7 +138,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
@@ -356,7 +356,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
                             <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
-							
+							<br></br>
+                            <button class="btn btn-success add-class-btn" onclick="#">View Class Booking</button>
                         </div>
                         
                     </div>

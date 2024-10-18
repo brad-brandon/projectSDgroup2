@@ -357,7 +357,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
                             <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
-							
+                            <br></br>
+							<button class="btn btn-success add-class-btn" onclick="#">VIew Class Booking</button>
                         </div>
                         
                     </div>
