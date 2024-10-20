@@ -34,9 +34,11 @@ $stmt->fetch();
 $stmt->close();
 
 // Get the selected membership type from the form
+$membership = '';
+$price = 0;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $membership = $_POST['membership'];
-    $price = 0;
 
     switch ($membership) {
         case 'student':
@@ -66,6 +68,29 @@ $conn->close();
     <title>Membership Summary</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/summary.css">
+    <script>
+        function proceedToPayment(membership) {
+            let paymentLink = '';
+
+            switch (membership) {
+                case 'student':
+                    paymentLink = "https://toyyibpay.com/Student-Membership"; // link for student
+                    break;
+                case 'normal':
+                    paymentLink = "https://toyyibpay.com/Normal-Membership"; // link for normal
+                    break;
+                case 'advanced':
+                    paymentLink = "https://toyyibpay.com/Advacned-Membership"; // link for advanced
+                    break;
+                default:
+                    alert("Invalid membership type.");
+                    return;
+            }
+
+            // Redirect to the payment link
+            window.location.href = paymentLink;
+        }
+    </script>
 </head>
 
 <body>
@@ -80,25 +105,22 @@ $conn->close();
 
 <div class="profile-container">
     <div class="profile-wrap">
-        <h1 class="profile-name">Full Name :<?php echo htmlspecialchars($full_name); ?> </h1>
+        <h1 class="profile-name">Full Name: <?php echo htmlspecialchars($full_name); ?></h1>
 
         <div class="profile-info">
             <h3>Your Full Information</h3>
         </div>
 
-        <div class ="full-info">
+        <div class="full-info">
             <p>Email: <?php echo htmlspecialchars($email); ?></p>
             <p>Phone: <?php echo htmlspecialchars($phoneNo); ?></p>
             <p><strong>Membership Type:</strong> <?php echo ucfirst($membership); ?> Membership</p>
             <p><strong>Total Price:</strong> RM <?php echo $price; ?> / Monthly</p>
         </div>
 
-    <!-- Payment button that redirects to Toyyibpay -->
-    <form action="toyyibpay_payment.php" method="POST">
-        <input type="hidden" name="membership" value="<?php echo $membership; ?>">
-        <input type="hidden" name="price" value="<?php echo $price; ?>">
-        <button type="submit" class="pay-btn">Proceed to Payment</button>
-    </form>
+        <!-- Button to proceed to payment -->
+        <button class="pay-btn" onclick="proceedToPayment('<?php echo $membership; ?>')">Proceed to Payment</button>
+    </div>
 </div>
 </body>
 </html>
