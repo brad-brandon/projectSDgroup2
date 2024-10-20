@@ -1,151 +1,134 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Nunito Sans', sans-serif;
-    background-color: #0d0d0d; /* Darker background for contrast */
-    color: #f0f0f0;
-    line-height: 1.6;
-    padding: 20px;
-    background-image: radial-gradient(circle, rgba(255,69,0,0.1), rgba(0,0,0,1));
-    /* A fiery subtle glow */
-}
+    body {
+        font-family: 'Nunito Sans', sans-serif;
+        background-color: #121212;
+        color: #f4f4f4;
+        line-height: 1.6;
+        padding: 20px;
+    }
 
-.header-section {
-    background-color: #1a1a1a;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #ff4500; /* Fiery accent */
-    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.2); /* Glowing effect */
-}
+    .header-section {
+        background-color: #1f1f1f;
+        padding: 20px;
+        text-align: center;
+    }
 
-.logo img {
-    max-width: 180px;
-    filter: drop-shadow(0 0 10px #ff4500); /* Neon glow on the logo */
-}
+    .logo img {
+        max-width: 180px;
+    }
 
-.profile-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-.profile-wrap {
-    background: linear-gradient(145deg, #262626, #1b1b1b);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 25px rgba(255, 69, 0, 0.3); /* Futuristic shadow effect */
-    width: 100%;
-    max-width: 600px;
-}
+    .profile-wrap {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 600px;
+    }
 
-.profile-name {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 0 0 10px #ff4500; /* Fiery glow on the name */
-}
+    .profile-name {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #ffffff;
+    }
 
-.profile-info h3, .subscription-status h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #ff6f00; /* Bright, fiery orange */
-    text-shadow: 0 0 5px rgba(255, 69, 0, 0.7); /* Glowing text */
-}
+    .profile-info h3, .subscription-status h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        color: #f39c12;
+    }
 
-.profile-info p, .subscription-status p {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #f0f0f0;
-}
+    .profile-info p, .subscription-status p {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #f4f4f4;
+    }
 
-.edit-profile-btn, .change-password-btn {
-    display: block;
-    background: linear-gradient(145deg, #ff4500, #c0392b); /* Fiery gradient */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
-    font-size: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5); /* Soft glow around buttons */
-    transition: background 0.3s ease-in-out;
-}
+    .edit-profile-btn, .change-password-btn {
+        display: block;
+        background-color: #e74c3c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
 
-.edit-profile-btn:hover, .change-password-btn:hover {
-    background: linear-gradient(145deg, #ff6347, #ff4500); /* Brighter on hover */
-}
+    .edit-profile-btn:hover, .change-password-btn:hover {
+        background-color: #c0392b;
+    }
 
-.form-group {
-    margin-bottom: 15px;
-}
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #ff6f00; /* Matching the fiery color scheme */
-}
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #f4f4f4;
+    }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ff6f00; /* Glowing input borders */
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #2c2c2c;
-    color: #f4f4f4;
-    box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.4); /* Inner glowing effect */
-}
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: #2c2c2c;
+        color: #f4f4f4;
+    }
 
-.save-btn {
-    background-color: #27ae60;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.5); /* Glow for the save button */
-    transition: background 0.3s ease-in-out;
-}
+    .save-btn {
+        background-color: #27ae60;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+        font-size: 1rem;
+    }
 
-.save-btn:hover {
-    background-color: #2ecc71;
-}
+    .save-btn:hover {
+        background-color: #1e8449;
+    }
 
-.footer-section {
-    margin-top: 40px;
-    text-align: center;
-    padding: 15px 0;
-    background-color: #1a1a1a;
-    color: white;
-    border-top: 2px solid #ff4500; /* Fiery border at the top */
-    box-shadow: 0 -4px 20px rgba(255, 69, 0, 0.2);
-}
+    .footer-section {
+        margin-top: 40px;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #1f1f1f;
+        color: white;
+    }
 
-.footer-section p {
-    margin: 0;
-    color: #f0f0f0;
-}
+    .footer-section p {
+        margin: 0;
+    }
 
-#edit-profile-form, #change-password-form {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #292929;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.2); /* Futuristic glowing form */
-    border: 1px solid #ff4500;
-}
+    #edit-profile-form, #change-password-form {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #2e2e2e;
+        border-radius: 5px;
+    }
