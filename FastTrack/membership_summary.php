@@ -50,6 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 'advanced':
             $price = 280;
             break;
+			case 'test':
+            $price = 1;
+            break;
         default:
             echo "Invalid membership selected.";
             exit;
@@ -74,13 +77,16 @@ $conn->close();
 
             switch (membership) {
                 case 'student':
-                    paymentLink = "https://toyyibpay.com/Student-Membership"; // link for student
+                    paymentLink = "https://dev.toyyibpay.com/Student-Plan"; // link for student
                     break;
                 case 'normal':
-                    paymentLink = "https://toyyibpay.com/Normal-Membership"; // link for normal
+                    paymentLink = "https://dev.toyyibpay.com/Normal-Plan"; // link for normal
                     break;
                 case 'advanced':
-                    paymentLink = "https://toyyibpay.com/Advacned-Membership"; // link for advanced
+                    paymentLink = "https://dev.toyyibpay.com/Advanced-Plan"; // link for advanced
+                    break;
+					case 'test':
+                    paymentLink = "https://dev.toyyibpay.com/testwebsite"; // link for advanced
                     break;
                 default:
                     alert("Invalid membership type.");
