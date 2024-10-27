@@ -337,8 +337,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <label for="end_time">End Time:</label>
         <input type="time" id="end_time" name="end_time" required><br><br>
         
-        <label for="class_name">Class Name:</label>
-        <input type="text" id="class_name" name="class_name" required><br><br>
+       <label for="class_name">Choose a Class:</label>
+                    <select name="class_name" id="class_name" required>
+                        <option value="Hypertrophy">Hypertrophy</option>
+                        <option value="HIIT">HIIT</option>
+                        <option value="Powerlifting">Powerlifting</option>
+                        <option value="ZUMBA">ZUMBA</option>
+                    </select>
         
         <input type="hidden" id="class_id" name="class_id">
 		       

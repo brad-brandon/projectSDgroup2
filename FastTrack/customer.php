@@ -277,9 +277,6 @@ $username = "Webs392024";
 $password = "Webs392024";
 $dbname = "fasttrack_gym";
 
-		session_start();
-		$_SESSION['user_id'] = $user_id;
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
         $time_slots = ['10:00:00', '14:00:00', '16:00:00', '18:00:00', '20:00:00'];
@@ -439,7 +436,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </table>
 				-->
             </div>
-            <a href="bookTrainingClass.html" class="primary-btn price-btn">Book Class</a>
+            <a href="bookTrainingClass.php" class="primary-btn price-btn">Book Class</a>
             <a href="view-booking-history.php" class="primary-btn price-btn">Book History</a>
         </div>
 		

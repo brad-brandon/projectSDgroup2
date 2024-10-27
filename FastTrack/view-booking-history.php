@@ -7,20 +7,14 @@ $dbname = "fasttrack_gym";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Check connection and handle any errors
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Replace this with the logged-in user's email
-$userEmail = "user_email@example.com"; // You need to replace this with the actual user's email
-
-// Retrieve user's booking history
-$sql = "SELECT * FROM bookings WHERE user_email = ? ORDER BY booking_date DESC";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $userEmail);
-$stmt->execute();
-$result = $stmt->get_result();
+// Retrieve all booking records, ordered by booking date in descending order
+$sql = "SELECT * FROM bookings ORDER BY booking_date DESC";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +22,8 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking History</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS here -->
+    <title>All Booking History</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
     <style>
         body {
             font-family: 'Nunito Sans', sans-serif;
@@ -80,10 +74,11 @@ $result = $stmt->get_result();
 </head>
 <body>
     <div class="container">
-        <h2>Booking History</h2>
+        <h2>All Booking History</h2>
         <table>
             <thead>
                 <tr>
+                    <th>User Email</th>
                     <th>Class Type</th>
                     <th>Class Date</th>
                     <th>Class Time</th>
@@ -94,6 +89,7 @@ $result = $stmt->get_result();
                 <?php if ($result->num_rows > 0): ?>
                     <?php while($row = $result->fetch_assoc()): ?>
                         <tr>
+                            <td><?php echo htmlspecialchars($row['user_email']); ?></td>
                             <td><?php echo htmlspecialchars($row['class_type']); ?></td>
                             <td><?php echo htmlspecialchars($row['class_date']); ?></td>
                             <td><?php echo htmlspecialchars($row['class_time']); ?></td>
@@ -102,7 +98,7 @@ $result = $stmt->get_result();
                     <?php endwhile; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="4">No bookings found.</td>
+                        <td colspan="5">No bookings found.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -114,6 +110,5 @@ $result = $stmt->get_result();
 
 <?php
 // Close the connection
-$stmt->close();
 $conn->close();
 ?>

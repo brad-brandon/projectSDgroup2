@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+session_start(); 
+$servername = "localhost";
+$username = "root";  // adjust your database credentials
+$password = "root";
+$dbname = "fasttrack_gym";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
+// Fetch class schedule from database
+$sql = "SELECT id, class_name, day_of_week, time_slot FROM class_schedule";
+$result = $conn->query($sql);
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,15 +55,17 @@
 						</tr>
                     </thead>
                     <tbody>
-                        <?php if ($result->num_rows > 0): ?>
+                        <?php 
+						
+						if ($result->num_rows > 0): ?>
         <?php while($row = $result->fetch_assoc()): ?>
             <tr>
                 <td><?php echo htmlspecialchars($row['class_name']); ?></td>
-                <td><?php echo htmlspecialchars($row['day']); ?></td>
-                <td><?php echo htmlspecialchars($row['time']); ?></td>
+                <td><?php echo htmlspecialchars($row['day_of_week']); ?></td>
+                <td><?php echo htmlspecialchars($row['time_slot']); ?></td>
                 <td>
-                    <form action="set_class.php" method="post">
-                        <input type="hidden" name="class_id" value="<?php echo $row['class_id']; ?>">
+                    <form action="submit-booking.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                         <button type="submit">Select</button>
                     </form>
                 </td>
@@ -65,7 +83,7 @@
     </section>
 
     <!-- Booking Form -->
-    <section class="booking-form-section">
+   <!--<section class="booking-form-section">
         <div class="container">
             <div class="booking-form">
                 <h3>Book Your Class</h3>
@@ -94,7 +112,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section>-->
 
 </body>
 </html>
