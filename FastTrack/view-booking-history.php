@@ -1,114 +1,96 @@
-<?php
-// Database connection
-$servername = "localhost"; 
-$username = "Webs392024"; 
-$password = "Webs392024"; 
-$dbname = "fasttrack_gym";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection and handle any errors
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Retrieve all booking records, ordered by booking date in descending order
-$sql = "SELECT * FROM bookings ORDER BY booking_date DESC";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Booking History</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
-    <style>
-        body {
-            font-family: 'Nunito Sans', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #e50914;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .primary-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 20px 0;
-            background-color: #e50914;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-        }
-    </style>
+    <title>Booking History</title>
 </head>
 <body>
-    <div class="container">
-        <h2>All Booking History</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>User Email</th>
-                    <th>Class Type</th>
-                    <th>Class Date</th>
-                    <th>Class Time</th>
-                    <th>Booking Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if ($result->num_rows > 0): ?>
-                    <?php while($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($row['user_email']); ?></td>
-                            <td><?php echo htmlspecialchars($row['class_type']); ?></td>
-                            <td><?php echo htmlspecialchars($row['class_date']); ?></td>
-                            <td><?php echo htmlspecialchars($row['class_time']); ?></td>
-                            <td><?php echo htmlspecialchars($row['booking_date']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="5">No bookings found.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
-        <a href="index.html" class="primary-btn">Back to Booking</a>
-    </div>
-</body>
-</html>
 
 <?php
-// Close the connection
+session_start();
+
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Database connection parameters
+$servername = "localhost";
+$username = "root";  // Adjust your database credentials
+$password = "root";
+$dbname = "fasttrack_gym";
+
+// Create a new mysqli connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the database connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    die("Error: Please log in first!");
+}
+
+// Get user_id from session
+$user_id = $_SESSION['user_id'];
+
+// Prepare the SQL statement to fetch booking history
+$sql = "SELECT b.booking_id, b.created_at, c.class_name, b.status 
+        FROM bookings_table b 
+        JOIN class_schedule c ON b.id = c.id 
+        WHERE b.user_id = ? 
+        ORDER BY b.created_at DESC";
+
+$stmt = $conn->prepare($sql);
+
+// Check for SQL preparation errors
+if (!$stmt) {
+    die("SQL prepare failed: " . htmlspecialchars($conn->error));
+}
+
+// Bind the user_id parameter
+$stmt->bind_param("i", $user_id);
+
+// Execute the statement
+if (!$stmt->execute()) {
+    die("SQL execute failed: " . htmlspecialchars($stmt->error));
+}
+
+$result = $stmt->get_result();
+
+// Check if the user has any bookings
+if ($result->num_rows > 0) {
+    echo "<h2>Your Booking History</h2>";
+    echo "<table border='1' cellpadding='5' cellspacing='0'>";
+    echo "<tr>
+            <th>Booking ID</th>
+            <th>Class Name</th>
+            <th>Booking Date</th>
+            <th>Status</th>
+          </tr>";
+    
+    // Fetch and display each booking
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($row['booking_id']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['class_name']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['created_at']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['status']) . "</td>";
+        echo "</tr>";
+    }
+    
+    echo "</table>";
+} else {
+    echo "<h2>No bookings found.</h2>";
+}
+
+// Close the statement and connection
+$stmt->close();
 $conn->close();
 ?>
+<!-- Back button -->
+<button onclick="window.location.href='customer.php'">Back</button>
+</body>
+</html>
