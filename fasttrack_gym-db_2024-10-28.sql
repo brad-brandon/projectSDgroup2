@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 28, 2024 at 04:59 AM
+-- Generation Time: Oct 28, 2024 at 05:35 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.3.0
 
@@ -40,8 +40,9 @@ CREATE TABLE `bookings_table` (
 --
 
 INSERT INTO `bookings_table` (`created_at`, `booking_id`, `id`, `status`, `user_id`) VALUES
-('2024-10-28 04:57:19', 18, 5, 'confirmed', 1),
-('2024-10-28 04:58:24', 19, 3, 'pending', 1);
+('2024-10-28 04:58:24', 19, 3, 'pending', 1),
+('2024-10-28 05:32:24', 22, 4, 'confirmed', 1),
+('2024-10-28 05:34:07', 23, 5, 'confirmed', 1);
 
 -- --------------------------------------------------------
 
@@ -56,33 +57,34 @@ CREATE TABLE `class_schedule` (
   `class_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `start_time` time DEFAULT NULL,
   `end_time` time DEFAULT NULL,
-  `capacity` int NOT NULL
+  `capacity` int NOT NULL,
+  `current_bookings` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `class_schedule`
 --
 
-INSERT INTO `class_schedule` (`id`, `day_of_week`, `time_slot`, `class_name`, `start_time`, `end_time`, `capacity`) VALUES
-(2, 'Wednesday', '10:00:00', 'Hypertrophy', '10:00:00', '15:00:00', 0),
-(3, 'Friday', '10:00:00', 'HIIT', '10:00:00', '13:00:00', 5),
-(4, 'Sunday', '10:00:00', 'HIIT', '10:00:00', '13:30:00', 5),
-(5, 'Tuesday', '14:00:00', 'Powerlifting', '14:00:00', '17:00:00', 5),
-(6, 'Thursday', '14:00:00', 'Powerlifting', '14:00:00', '17:00:00', 5),
-(7, 'Saturday', '14:00:00', 'Hypertrophy', '14:00:00', '15:30:00', 5),
-(8, 'Monday', '16:00:00', 'ZUMBA', '16:00:00', '18:00:00', 5),
-(9, 'Wednesday', '16:00:00', 'ZUMBA', '16:00:00', '19:00:00', 5),
-(10, 'Friday', '16:00:00', 'HIIT', '16:00:00', '19:00:00', 5),
-(11, 'Saturday', '16:00:00', 'ZUMBA', '16:00:00', '17:00:00', 5),
-(12, 'Sunday', '16:00:00', 'Hypertrophy', '16:00:00', '20:00:00', 5),
-(13, 'Monday', '18:00:00', 'ZUMBA', '18:00:00', '20:00:00', 5),
-(14, 'Tuesday', '18:00:00', 'Powerlifting1', '18:00:00', '20:00:00', 5),
-(15, 'Thursday', '18:00:00', 'ZUMBA', '18:00:00', '22:00:00', 5),
-(16, 'Saturday', '18:00:00', 'Hypertrophy', '18:00:00', '22:00:00', 5),
-(18, 'Tuesday', '20:00:00', 'HIIT', '20:00:00', '22:00:00', 5),
-(19, 'Wednesday', '20:30:00', 'Powerlifting', '20:30:00', '23:00:00', 5),
-(20, 'Friday', '22:00:00', 'Hypertrophy', '22:00:00', '23:00:00', 5),
-(21, 'Sunday', '21:00:00', 'ZUMBA', '21:00:00', '23:00:00', 5);
+INSERT INTO `class_schedule` (`id`, `day_of_week`, `time_slot`, `class_name`, `start_time`, `end_time`, `capacity`, `current_bookings`) VALUES
+(2, 'Wednesday', '10:00:00', 'Hypertrophy', '10:00:00', '15:00:00', 0, 0),
+(3, 'Friday', '10:00:00', 'HIIT', '10:00:00', '13:00:00', 5, 0),
+(4, 'Sunday', '10:00:00', 'HIIT', '10:00:00', '13:30:00', 4, 1),
+(5, 'Tuesday', '14:00:00', 'Powerlifting', '14:00:00', '17:00:00', 4, 1),
+(6, 'Thursday', '14:00:00', 'Powerlifting', '14:00:00', '17:00:00', 5, 0),
+(7, 'Saturday', '14:00:00', 'Hypertrophy', '14:00:00', '15:30:00', 5, 0),
+(8, 'Monday', '16:00:00', 'ZUMBA', '16:00:00', '18:00:00', 5, 0),
+(9, 'Wednesday', '16:00:00', 'ZUMBA', '16:00:00', '19:00:00', 5, 0),
+(10, 'Friday', '16:00:00', 'HIIT', '16:00:00', '19:00:00', 5, 0),
+(11, 'Saturday', '16:00:00', 'ZUMBA', '16:00:00', '17:00:00', 5, 0),
+(12, 'Sunday', '16:00:00', 'Hypertrophy', '16:00:00', '20:00:00', 5, 0),
+(13, 'Monday', '18:00:00', 'ZUMBA', '18:00:00', '20:00:00', 5, 0),
+(14, 'Tuesday', '18:00:00', 'Powerlifting1', '18:00:00', '20:00:00', 5, 0),
+(15, 'Thursday', '18:00:00', 'ZUMBA', '18:00:00', '22:00:00', 5, 0),
+(16, 'Saturday', '18:00:00', 'Hypertrophy', '18:00:00', '22:00:00', 5, 0),
+(18, 'Tuesday', '20:00:00', 'HIIT', '20:00:00', '22:00:00', 5, 0),
+(19, 'Wednesday', '20:30:00', 'Powerlifting', '20:30:00', '23:00:00', 5, 0),
+(20, 'Friday', '22:00:00', 'Hypertrophy', '22:00:00', '23:00:00', 5, 0),
+(21, 'Sunday', '21:00:00', 'ZUMBA', '21:00:00', '23:00:00', 5, 0);
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,9 @@ CREATE TABLE `transactions` (
 
 INSERT INTO `transactions` (`id`, `bill_name`, `bill_description`, `bill_to`, `bill_email`, `bill_phone`, `bill_status`, `bill_payment_status`, `bill_payment_channel`, `bill_payment_amount`, `bill_payment_invoice_no`, `bill_payment_date`, `transaction_charge`) VALUES
 (5, 'testwebsite', '1', 'WONG TIEN FUNG', 'coolmangame5390@gmail.com', '01129639253', 1, 1, 'FPX B2C', 1.00, 'TP2410213276455101', '2024-10-21 07:37:26', 1.00),
-(6, 'testwebsite', '1', 'WONG TIEN FUNG', 'toman9632@gmail.com', '01129639253', 1, 1, 'FPX B2C', 1.00, 'TP2410213819094464', '2024-10-21 11:35:00', 1.00);
+(6, 'testwebsite', '1', 'WONG TIEN FUNG', 'toman9632@gmail.com', '01129639253', 1, 1, 'FPX B2C', 1.00, 'TP2410213819094464', '2024-10-21 11:35:00', 1.00),
+(7, 'testwebsite', '1', 'BRADLEY BRANDON ANAK ADAM', 'bradleybrandon267@gmail.com', '0149302761', 1, 1, 'FPX B2C', 1.00, 'TP2410250768809001', '2024-10-25 12:29:42', 1.00),
+(8, 'testwebsite', '1', 'Edmund Heng', 'edmundheng2003@gmail.com', '0187924405', 1, 1, 'FPX B2C', 1.00, 'TP2410272890916650', '2024-10-27 01:34:25', 1.00);
 
 -- --------------------------------------------------------
 
@@ -250,7 +254,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings_table`
 --
 ALTER TABLE `bookings_table`
-  MODIFY `booking_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `booking_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `class_schedule`
@@ -274,7 +278,7 @@ ALTER TABLE `memberships`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

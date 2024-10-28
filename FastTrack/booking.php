@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
     echo "<p><a href='view-booking-history.php'>View Your Booking History</a></p>";
 } else {
     // Proceed with booking insertion
-    $sql = "INSERT INTO bookings_table (user_id, id, status) VALUES (?, ?, 'pending')";
+    $sql = "INSERT INTO bookings_table (user_id, id, status) VALUES (?, ?, 'confirmed')";
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
@@ -60,6 +60,26 @@ if ($result->num_rows > 0) {
             echo "<h2>Class successfully booked!</h2>";
             echo "<p>Your booking has been confirmed.</p>";
             echo "<p><a href='customer.php'>Go back to main page</a></p>";
+
+            // Update class capacity and current bookings in class_schedule
+            $updateSql = "
+                UPDATE class_schedule 
+                SET current_bookings = current_bookings + 1, 
+                    capacity = capacity - 1 
+                WHERE id = ? AND capacity > 0";
+            $updateStmt = $conn->prepare($updateSql);
+            $updateStmt->bind_param("i", $class_id);
+            $updateStmt->execute();
+
+            // Check if the update was successful
+            if ($updateStmt->affected_rows > 0) {
+                echo "<p>Class capacity and current bookings updated successfully.</p>";
+            } else {
+                echo "<p>Error: Could not update class capacity. The class may be full.</p>";
+            }
+
+            // Close update statement
+            $updateStmt->close();
         } else {
             echo "<h2>Error: Booking failed.</h2>";
             echo "<p>" . htmlspecialchars($stmt->error) . "</p>";
