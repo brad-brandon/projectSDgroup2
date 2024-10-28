@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 // Database connection parameters
 $servername = "localhost";
-$username = "root";  // Adjust your database credentials
+$username = "root";  
 $password = "root";
 $dbname = "fasttrack_gym";
 
@@ -33,45 +33,48 @@ if (!isset($_SESSION['id'])) {
 $user_id = $_SESSION['user_id'];
 $class_id = $_SESSION['id'];
 
-// Debugging: Print user ID and class ID
-echo "User ID: " . $user_id . "<br>";
-echo "Class ID: " . $class_id . "<br>";
+// Check for existing booking with the same user_id and class_id
+$checkSql = "SELECT * FROM bookings_table WHERE user_id = ? AND id = ?";
+$checkStmt = $conn->prepare($checkSql);
+$checkStmt->bind_param("ii", $user_id, $class_id);
+$checkStmt->execute();
+$result = $checkStmt->get_result();
 
-// Prepare the SQL statement to insert a new booking
-$sql = "INSERT INTO bookings_table (user_id, id, status) VALUES (?, ?, 'confirmed')";
-$stmt = $conn->prepare($sql);
+if ($result->num_rows > 0) {
+    // Duplicate booking found
+    echo "<h2>Booking Failed: Duplicate Entry</h2>";
+    echo "<p>You have already booked this class. Please check your booking history.</p>";
+    echo "<p><a href='view-booking-history.php'>View Your Booking History</a></p>";
+} else {
+    // Proceed with booking insertion
+    $sql = "INSERT INTO bookings_table (user_id, id, status) VALUES (?, ?, 'pending')";
+    $stmt = $conn->prepare($sql);
 
-// Check if statement preparation was successful
-if (!$stmt) {
-    die("Error preparing statement: " . $conn->error);
-}
+    if ($stmt) {
+        // Bind parameters (user_id and class_id)
+        $stmt->bind_param("ii", $user_id, $class_id);
 
-// Bind parameters (user_id and class_id)
-$stmt->bind_param("ii", $user_id, $class_id);
-
-// Execute the statement and check for success
-try {
-    if ($stmt->execute()) {
-        // Booking successful, display confirmation
-        echo "<h2>Class successfully booked!</h2>";
-        echo "<p>Your booking has been confirmed.</p>";
-        echo "<p><a href='customer.php'>Go back to class selection</a></p>";
-    }
-} catch (mysqli_sql_exception $e) {
-    // Handle duplicate entry error
-    if ($e->getCode() == 1062) { // 1062 is the SQL error code for duplicate entries
-        echo "<h2>Booking Failed: Duplicate Entry</h2>";
-        echo "<p>You have already booked this class. Please check your booking history.</p>";
-        echo "<p><a href='view-booking-history.php'>View Your Booking History</a></p>";
+        // Execute the statement and check for success
+        if ($stmt->execute()) {
+            // Booking successful
+            echo "<h2>Class successfully booked!</h2>";
+            echo "<p>Your booking has been confirmed.</p>";
+            echo "<p><a href='customer.php'>Go back to main page</a></p>";
+        } else {
+            echo "<h2>Error: Booking failed.</h2>";
+            echo "<p>" . htmlspecialchars($stmt->error) . "</p>";
+        }
     } else {
-        // Handle other SQL errors
-        echo "<h2>Error: Booking failed.</h2>";
-        echo "<p>" . htmlspecialchars($e->getMessage()) . "</p>";
+        die("Error preparing statement: " . $conn->error);
     }
 }
 
-
-// Close the statement and connection
-$stmt->close();
+// Close the statements and connection only if they were initialized
+if (isset($checkStmt)) {
+    $checkStmt->close();
+}
+if (isset($stmt)) {
+    $stmt->close();
+}
 $conn->close();
 ?>

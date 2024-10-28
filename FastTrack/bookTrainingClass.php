@@ -85,7 +85,6 @@ if (!$result) {
     die("SQL query failed: " . $conn->error);
 }
 ?>
-
 <!-- Class Schedule Section -->
 <section class="classtime-section class-time-table spad">
     <div class="container">

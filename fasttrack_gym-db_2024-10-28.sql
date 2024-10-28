@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 27, 2024 at 06:49 PM
+-- Generation Time: Oct 28, 2024 at 04:59 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.3.0
 
@@ -30,17 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `bookings_table` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `booking_id` int NOT NULL,
-  `user_id` int DEFAULT NULL,
   `id` int DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'pending'
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'pending',
+  `user_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `bookings_table`
 --
 
-INSERT INTO `bookings_table` (`created_at`, `booking_id`, `user_id`, `id`, `status`) VALUES
-('2024-10-27 17:37:49', 1, 1, 8, 'confirmed');
+INSERT INTO `bookings_table` (`created_at`, `booking_id`, `id`, `status`, `user_id`) VALUES
+('2024-10-28 04:57:19', 18, 5, 'confirmed', 1),
+('2024-10-28 04:58:24', 19, 3, 'pending', 1);
 
 -- --------------------------------------------------------
 
@@ -207,8 +208,8 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phoneNo`, `verific
 ALTER TABLE `bookings_table`
   ADD PRIMARY KEY (`booking_id`),
   ADD UNIQUE KEY `class_id` (`id`),
-  ADD UNIQUE KEY `user_id` (`user_id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `idx_user_id` (`user_id`);
 
 --
 -- Indexes for table `class_schedule`
@@ -249,7 +250,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings_table`
 --
 ALTER TABLE `bookings_table`
-  MODIFY `booking_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `booking_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `class_schedule`
@@ -289,8 +290,8 @@ ALTER TABLE `users`
 -- Constraints for table `bookings_table`
 --
 ALTER TABLE `bookings_table`
-  ADD CONSTRAINT `bookings_table_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `bookings_table_ibfk_2` FOREIGN KEY (`id`) REFERENCES `class_schedule` (`id`);
+  ADD CONSTRAINT `bookings_table_ibfk_2` FOREIGN KEY (`id`) REFERENCES `class_schedule` (`id`),
+  ADD CONSTRAINT `bookings_table_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
