@@ -69,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'billPriceSetting' => 1,
 		'billPayorInfo' => 1,
         'billAmount' => $price * 100, // Convert to cents
-        'billReturnUrl' => 'http://fasttrackgym.shop/default.php',
-        'billCallbackUrl' => 'http://fasttrackgym.shop/default.php',
+        'billReturnUrl' => 'http://fasttrackgym.shop/FastTrack/payment_return.php',
+        'billCallbackUrl' => '',
         'billExternalReferenceNo' => 'AFR341DFI',
         'billTo' => $full_name,
         'billEmail' => $email,
