@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost"; 
-$username = "Webs392024"; 
-$password = "Webs392024"; 
-$dbname = "fasttrack_gym";
+require 'config.php';
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data

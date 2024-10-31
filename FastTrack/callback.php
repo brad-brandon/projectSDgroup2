@@ -6,10 +6,7 @@ $billCode = $_POST['billCode']; // Bill code from Toyyibpay
 $paymentStatus = $_POST['status']; // Payment status (1: successful, 0: failed)
 
 // Database connection settings
-$servername = "localhost";
-$username = "Webs392024";
-$password = "Webs392024";
-$dbname = "fasttrack_gym";
+require 'config.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

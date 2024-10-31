@@ -1,9 +1,6 @@
 <?php
 // Database connection
-$servername = "localhost";
-$username = "Webs392024";
-$password = "Webs392024";
-$dbname = "fasttrack_gym";
+include 'db_connect.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -200,10 +200,7 @@
     <tbody>
         <!-- PHP Loop to fetch schedule from the database -->
         <?php
-		$servername = "localhost";
-$username = "root";  // adjust your database credentials
-$password = "root";
-$dbname = "fasttrack_gym";
+		include 'db_connect.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -271,10 +268,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <tbody>
         <!-- PHP Loop to fetch schedule from the database -->
         <?php
-		$servername = "localhost";
-$username = "root";  // adjust your database credentials
-$password = "root";
-$dbname = "fasttrack_gym";
+		include 'db_connect.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -1,10 +1,7 @@
 
 <?php
 // Database connection settings
-$servername = "localhost"; 
-$username = "Webs392024"; 
-$password = "Webs392024"; 
-$dbname = "fasttrack_gym";
+require 'config.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

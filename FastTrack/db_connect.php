@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";  // adjust your database credentials
-$password = "root";
-$dbname = "fasttrack_gym";
+require 'config.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

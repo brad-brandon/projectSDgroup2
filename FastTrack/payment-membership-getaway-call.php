@@ -1,9 +1,6 @@
 <?php
 // Database connection settings
-$servername = "localhost";
-$username = "Webs392024";
-$password = "Webs392024";
-$dbname = "fasttrack_gym";
+require 'config.php';
 
 // Start session
 session_start();

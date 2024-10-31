@@ -6,10 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection parameters
-$servername = "localhost";
-$username = "root";  
-$password = "root";
-$dbname = "fasttrack_gym";
+require 'config.php';
 
 // Create a new mysqli connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -8,23 +8,16 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Database connection settings
-$servername = "localhost";
-$username = "Webs392024";
-$password = "Webs392024";
-$dbname = "fasttrack_gym";
+require 'config.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 // Get the user's ID from the session
 $user_id = $_SESSION['user_id'];
-
-// Query the database to get user details
 $sql = "SELECT full_name, email, phoneNo FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
@@ -33,10 +26,9 @@ $stmt->bind_result($full_name, $email, $phoneNo);
 $stmt->fetch();
 $stmt->close();
 
-// Get the selected membership type from the form
+// Membership selection and price
 $membership = '';
 $price = 0;
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $membership = $_POST['membership'];
 
@@ -50,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 'advanced':
             $price = 280;
             break;
-			case 'test':
+        case 'test':
             $price = 1;
             break;
         default:
@@ -61,6 +53,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close the database connection
 $conn->close();
+
+// Proceed to payment and create a bill with ToyyibPay
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $billData = [
+        'userSecretKey' => 'bxvrdepp-k077-t27p-qt5o-kohis82ooitl',
+        'categoryCode' => 'y5idty12',
+        'billName' => ucfirst($membership) . " Membership",
+        'billDescription' => ucfirst($membership) . " Membership Payment",
+        'billAmount' => $price * 100, // Convert to cents
+        'billReturnUrl' => 'http://localhost/projectSDgroup2/FastTrack/payment-success.php',
+        'billCallbackUrl' => 'http://localhost/projectSDgroup2/FastTrack/payment-callback.php',
+        'billTo' => $full_name,
+        'billEmail' => $email,
+        'billPhone' => $phoneNo
+    ];
+
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+        CURLOPT_URL => 'https://dev.toyyibpay.com/index.php/api/createBill',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $billData
+    ]);
+
+    $response = curl_exec($curl);
+    curl_close($curl);
+    $bill = json_decode($response, true);
+
+    if (isset($bill[0]['BillCode'])) {
+        // Redirect to the payment link
+        header('Location: https://dev.toyyibpay.com/' . $bill[0]['BillCode']);
+        exit;
+    } else {
+        echo 'Error creating payment bill. Please try again.';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,32 +99,6 @@ $conn->close();
     <title>Membership Summary</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/summary.css">
-    <script>
-        function proceedToPayment(membership) {
-            let paymentLink = '';
-
-            switch (membership) {
-                case 'student':
-                    paymentLink = "https://dev.toyyibpay.com/Student-Plan"; // link for student
-                    break;
-                case 'normal':
-                    paymentLink = "https://dev.toyyibpay.com/Normal-Plan"; // link for normal
-                    break;
-                case 'advanced':
-                    paymentLink = "https://dev.toyyibpay.com/Advanced-Plan"; // link for advanced
-                    break;
-					case 'test':
-                    paymentLink = "https://dev.toyyibpay.com/testwebsite"; // link for advanced
-                    break;
-                default:
-                    alert("Invalid membership type.");
-                    return;
-            }
-
-            // Redirect to the payment link
-            window.location.href = paymentLink;
-        }
-    </script>
 </head>
 
 <body>
@@ -125,7 +127,10 @@ $conn->close();
         </div>
 
         <!-- Button to proceed to payment -->
-        <button class="pay-btn" onclick="proceedToPayment('<?php echo $membership; ?>')">Proceed to Payment</button>
+        <form method="post" action="">
+            <input type="hidden" name="membership" value="<?php echo $membership; ?>">
+            <button type="submit" class="pay-btn">Proceed to Payment</button>
+        </form>
     </div>
 </div>
 </body>

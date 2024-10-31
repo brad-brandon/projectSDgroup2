@@ -1,9 +1,6 @@
 <?php
 // delete_staff.php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "fasttrack_gym";
+include 'db_connect.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
