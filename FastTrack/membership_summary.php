@@ -29,21 +29,26 @@ $stmt->close();
 // Membership selection and price
 $membership = '';
 $price = 0;
+$categoryPlan='';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $membership = $_POST['membership'];
 
     switch ($membership) {
         case 'student':
             $price = 80;
+			$categoryPlan='qioxmes8';
             break;
         case 'normal':
             $price = 120;
+			$categoryPlan='6f01fm90';
             break;
         case 'advanced':
             $price = 280;
+			$categoryPlan='fbk4j9qu';
             break;
         case 'test':
             $price = 1;
+			$categoryPlan='6gt1y6y6';
             break;
         default:
             echo "Invalid membership selected.";
@@ -58,35 +63,45 @@ $conn->close();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $billData = [
         'userSecretKey' => 'bxvrdepp-k077-t27p-qt5o-kohis82ooitl',
-        'categoryCode' => 'y5idty12',
+        'categoryCode' => $categoryPlan,
         'billName' => ucfirst($membership) . " Membership",
         'billDescription' => ucfirst($membership) . " Membership Payment",
+        'billPriceSetting' => 1,
+		'billPayorInfo' => 1,
         'billAmount' => $price * 100, // Convert to cents
-        'billReturnUrl' => 'http://localhost/projectSDgroup2/FastTrack/payment-success.php',
-        'billCallbackUrl' => 'http://localhost/projectSDgroup2/FastTrack/payment-callback.php',
+        'billReturnUrl' => 'http://fasttrackgym.shop/default.php',
+        'billCallbackUrl' => 'http://fasttrackgym.shop/default.php',
+        'billExternalReferenceNo' => 'AFR341DFI',
         'billTo' => $full_name,
         'billEmail' => $email,
-        'billPhone' => $phoneNo
+        'billPhone' => $phoneNo,
+        'billSplitPayment' => 0,
+        'billSplitPaymentArgs' => '',
+        'billPaymentChannel' => '0',
+        'billContentEmail' => 'Thank you for purchasing our product!',
+        'billChargeToCustomer' => 1
     ];
 
     $curl = curl_init();
-    curl_setopt_array($curl, [
-        CURLOPT_URL => 'https://dev.toyyibpay.com/index.php/api/createBill',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => $billData
-    ]);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_URL, 'https://dev.toyyibpay.com/index.php/api/createBill');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $billData);
 
     $response = curl_exec($curl);
     curl_close($curl);
+
+    // Decode and display the response for debugging
     $bill = json_decode($response, true);
 
+    // Check if response contains BillCode, else show the error response
     if (isset($bill[0]['BillCode'])) {
         // Redirect to the payment link
         header('Location: https://dev.toyyibpay.com/' . $bill[0]['BillCode']);
         exit;
     } else {
-        echo 'Error creating payment bill. Please try again.';
+        // Show the full response for debugging
+        echo 'Error creating payment bill. Full response: ' . htmlspecialchars($response);
     }
 }
 ?>
