@@ -42,15 +42,16 @@ if (isset($_POST['update'])) {
     $new_full_name = $_POST['full_name'];
     $new_email = $_POST['email'];
     $new_phoneNo = $_POST['phoneNo'];
-
+	$new_membership_type = $_POST['membership_type'];
+    $new_Status = $_POST['Status'];
     // Update query
-    $sql_update = "UPDATE users SET full_name = ?, email = ?, phoneNo = ? WHERE id = ?";
+    $sql_update = "UPDATE users SET membership_type = ?, Status = ? WHERE id = ?";
     $stmt_update = $conn->prepare($sql_update);
-    $stmt_update->bind_param("sssi", $new_full_name, $new_email, $new_phoneNo, $id);
+    $stmt_update->bind_param("ssi", $new_membership_type, $new_Status, $id);
 
     if ($stmt_update->execute()) {
         echo "Customer updated successfully!";
-        header("Location: customer.php");
+        header("Location: form.php");
         exit();
     } else {
         echo "Error updating customer: " . $conn->error;
@@ -65,33 +66,55 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Customer</title>
+    <title>Edit Customer Membership</title>
     <link rel = "stylesheet" href = "css/edit_customer.css">
 </head>
 <body>
     <div class = "header-section">
-        <h2>Edit Customer</h2>
+        <h2>Edit Customer Membership</h2>
     </div>
 
     <div class = "form-section">
     <div class="form-wrap">
-    <h3>Edit Customer</h3>
+    <h3>Edit Customer Membership</h3>
+
    
-        <form method="POST" action="">
+   
+        <form id="classFormFields" method="POST" action="">
         
         <div class = "group-input">
-        <label for="full_name">Name:</label>
-        <input type="text" name="full_name" value="<?php echo $full_name; ?>" required>
+        <label for="full_name">Name: <?php echo $full_name; ?></label>
+  
         </div>
 
         <div class = "group-input">
-        <label for="email">Email:</label>
-        <input type="email" name="email" value="<?php echo $email; ?>" required>
+        <label for="email">Email: <?php echo $email; ?></label>
+  
         </div>
 
         <div class = "group-input">
-        <label for="phoneNo">Phone No:</label>
-        <input type="text" name="phoneNo" value="<?php echo $phoneNo; ?>" required>
+        <label for="phoneNo">Phone No: <?php echo $phoneNo; ?></label>
+ 
+        </div>
+		<br>
+<div class="group-input">
+    <label for="membership_type">Current Membership type: <?php echo $membership_type; ?></label>
+    <br><p>Change membership to: <p/><select id="membership_type" name="membership_type">
+        <option value="student">student</option>
+        <option value="normal">normal</option>
+        <option value="advanced">advanced</option>
+    </select>
+
+</div>
+
+		<div class = "group-input">
+        <label for="Status">Subscription status: <?php echo $Status; ?></label>
+		    <br><p>Change Subscription status to: <p/><select id="Status" name="Status">
+        <option value="inactive">inactive</option>
+        <option value="active">active</option>
+
+    </select>
+       
         </div>
 
         <input type="submit" class="site-btn" name="update" value="Update">

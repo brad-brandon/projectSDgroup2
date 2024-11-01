@@ -169,42 +169,70 @@
 
 
             <!-- Widget Start -->
-            <div class="container-fluid pt-4 px-4">
-            <div class="row g-4">
-                <div class="col-sm-12 col-md-6">
-                    <div class="h-100 bg-secondary rounded p-4">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <!-- Customer Data Table -->
-                            <h3 class="mb-4">Subscription Status</h3>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Address</th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Table data will go here -->
-                                    <!-- Example Row -->
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Wong</td>
-                                        <td>wong@example.com</td>
-                                        <td>123-456-7890</td>
-                                        <td>UTM</td>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>	
-                    <td><a href="#" class="btn btn-primary btn-sm">Edit Subscription</a></td>
-                    <td><a href="#" class="btn btn-primary btn-sm">Delete Subscription</a></td>
-					
+           <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded p-4">
+                    <h6 class="mb-4 text-white">Membership Details</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-white">
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone No</th>
+									<th scope="col">Membership type</th>
+                                    <th scope="col">Subscription status</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Database connection
+                               include 'db_connect.php';
+
+                                // Create connection
+                                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                // Check connection
+                                if ($conn->connect_error) {
+                                    die("Connection failed: " . $conn->connect_error);
+                                }
+
+                                // Query to fetch customer details where user_type is 'user'
+                                $sql = "SELECT id, full_name, email, phoneNo, membership_type, Status FROM users WHERE user_type = 'user'";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    // Output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['full_name'] . "</td>";
+                                        echo "<td>" . $row['email'] . "</td>";
+                                        echo "<td>" . $row['phoneNo'] . "</td>";
+										echo "<td>" . $row['membership_type'] . "</td>";
+                                        echo "<td>" . $row['Status'] . "</td>";
+                                        echo "<td><a href='edit_customerMembership.php?id=" . $row['id'] . "' class='btn btn-primary'>Edit</a></td>";
+                                        echo "<td><a href='delete_customerMembership.php?id=" . $row['id'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this customer membership?\")'>Delete</a></td>";
+										
+                                        echo "</tr>";
+                                    }
+                                } else {
+								echo "<tr><td colspan='5'>No customer data found</td></tr>";
+								}
+		
+							// Close connection
+							$conn->close();
+							?>
+						</tbody>
+					</table>
+                    </div>
+                </div>
+            </div>
+			<div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded p-4">
+                    <h6 class="mb-4 text-white">Payment Details</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
 					<?php
 // Database connection settings
 include 'db_connect.php';
@@ -269,7 +297,11 @@ $result = $conn->query($sql);
             ?>
         </tbody>
     </table>
-
+</tbody>
+					</table>
+                    </div>
+                </div>
+            </div>
 
 <?php
 // Close the connection

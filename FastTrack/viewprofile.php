@@ -22,11 +22,11 @@ if ($conn->connect_error) {
 $user_id = $_SESSION['user_id'];
 
 // Query the database to get user details
-$sql = "SELECT full_name, email, user_type, phoneNo,membership_type FROM users WHERE id = ?";
+$sql = "SELECT full_name, email, user_type, phoneNo,membership_type,Status FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
-$stmt->bind_result($full_name, $email, $user_type, $phoneNo,$membership_type);
+$stmt->bind_result($full_name, $email, $user_type, $phoneNo,$membership_type, $Status);
 $stmt->fetch();
 $stmt->close();
 
@@ -65,7 +65,7 @@ $conn->close();
         <div class="subscription-status">
             <h3>Subscription Status</h3>
             <p>Membership Type: <?php echo htmlspecialchars($membership_type); ?></p>
-            <p>Status: </p>
+            <p>Status: <?php echo htmlspecialchars($Status); ?></p>
         </div>
 
         <!-- Edit Profile Button -->

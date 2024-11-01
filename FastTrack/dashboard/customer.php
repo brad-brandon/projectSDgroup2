@@ -136,6 +136,8 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone No</th>
+									<th scope="col">Membership type</th>
+                                    <th scope="col">Subscription status</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -154,7 +156,7 @@
                                 }
 
                                 // Query to fetch customer details where user_type is 'user'
-                                $sql = "SELECT id, full_name, email, phoneNo FROM users WHERE user_type = 'user'";
+                                $sql = "SELECT id, full_name, email, phoneNo, membership_type, Status FROM users WHERE user_type = 'user'";
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -164,6 +166,8 @@
                                         echo "<td>" . $row['full_name'] . "</td>";
                                         echo "<td>" . $row['email'] . "</td>";
                                         echo "<td>" . $row['phoneNo'] . "</td>";
+										echo "<td>" . $row['membership_type'] . "</td>";
+                                        echo "<td>" . $row['Status'] . "</td>";
                                         echo "<td><a href='edit_customer.php?id=" . $row['id'] . "' class='btn btn-primary'>Edit</a></td>";
                                         echo "<td><a href='delete_customer.php?id=" . $row['id'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this customer?\")'>Delete</a></td>";
                                         echo "</tr>";

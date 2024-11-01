@@ -79,7 +79,7 @@ if ($status_id == 1 && $billcode) {
 		}
         $billEmail = $transaction['billEmail'];
 
-        $sql = "UPDATE users SET membership_type = ? WHERE email = ?";
+        $sql = "UPDATE users SET membership_type = ?, status = 'active' WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $membershipType, $billEmail);
         $stmt->execute();
