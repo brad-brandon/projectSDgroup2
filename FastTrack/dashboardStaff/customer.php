@@ -52,7 +52,7 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="widget.html" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Customer Info</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Membership</a>
+                    <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Membership</a>
                     <a href="staff_dashboard.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Class</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Personal Training</a>
                 </div>
@@ -142,10 +142,7 @@
                             <tbody>
                                 <?php
                                 // Database connection
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "root";
-                                $dbname = "fasttrack_gym";
+                                include 'db_connect.php';
 
                                 // Create connection
                                 $conn = new mysqli($servername, $username, $password, $dbname);
