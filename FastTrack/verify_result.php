@@ -12,8 +12,6 @@ $message = isset($_GET['message']) ? $_GET['message'] : 'Unknown error occurred.
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/login.css" type="text/css">
     <link rel="stylesheet" href="css/signup.css" type="text/css">
 
     <style>

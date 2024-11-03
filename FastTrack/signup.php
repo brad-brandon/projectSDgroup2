@@ -36,15 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Send verification email
-        //$verification_link = "http://yourdomain.com/verify.php?token=" . $verification_token;
-$verification_link = "http://localhost/projectSDgroup2/FastTrack/verify.php?token=" . $verification_token;
+        //$verification_link = "https://fasttrackgym.shop/FastTrack/verify.php?token=" . $verification_token;
+        $verification_link = "http://localhost/projectSDgroup2/FastTrack/verify.php?token=" . $verification_token;
 
 // or if using an IP address
 // $verification_link = "http://127.0.0.1/projectSDgroup2/FastTrack/verify.php?token=" . $verification_token;
 
         $subject = "Verify Your Email Address";
         $message = "Hello $full_name,\n\nPlease click the link below to verify your email address:\n$verification_link\n\nThank you!";
-        $headers = "From: no-reply@yourdomain.com";
+        $headers = "From: no-reply@fasttrackgym.shop";
 
         if (mail($email, $subject, $message, $headers)) {
 			header("Location: verify_result.php?message=" . urlencode("A verification email has been sent to your email address."));

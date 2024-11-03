@@ -38,6 +38,13 @@
 }
 
 	</style>
+    <header class="header-section">
+        <div class="logo">
+            <a href ="./customer.html">
+                <img src="img/logo3.png" alt="FastTrack Gym Logo">
+            </a>
+        </div>
+    </header>
 </head>
 <body>
 
