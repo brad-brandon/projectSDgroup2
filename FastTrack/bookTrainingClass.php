@@ -45,7 +45,7 @@ $currentBookingsCount = $userInfo['bookings_count'];
 if ($status !== 'active') {
     echo "<h2>Booking Failed: Subscription Required</h2>";
     echo "<p>Your account is currently inactive. To enjoy our classes, we invite you to subscribe to one of our plans.</p>";
-    echo "<p><a href='subscribe.php'>Subscribe Now</a></p> <a href='customer.php' class='button'>Go back to main page</a>"; // Link to subscription page
+    echo "<p><a href='membership.html'>Subscribe Now</a></p> <a href='customer.php' class='button'>Go back to main page</a>"; // Link to subscription page
     exit;
 }
 
