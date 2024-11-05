@@ -48,7 +48,7 @@ $conn->close();
 <header class="header-section">
     <div class="logo">
         <a href="./staff.html">
-            <img src="img/logo3.png" alt="FastTrack Gym Logo">
+            <img src="img/LOGO3.png" alt="FastTrack Gym Logo">
         </a>
     </div>
 </header>

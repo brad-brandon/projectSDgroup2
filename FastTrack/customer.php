@@ -44,7 +44,7 @@
     <div class="container-fluid">
         <div class="logo">
             <a href="./customer.php">
-                <img src="img/logo3.png" alt="FastTrack Gym Logo">
+                <img src="img/LOGO3.png" alt="FastTrack Gym Logo">
             </a>
         </div>
 		<div class="container-fluid">

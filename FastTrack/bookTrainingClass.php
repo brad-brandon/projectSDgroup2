@@ -102,12 +102,13 @@ if (!$result) {
     <link rel="stylesheet" href="css/bookTrainingClass.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+	
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style1.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Class Booking</title>
@@ -132,16 +133,16 @@ if (!$result) {
             background: #0056b3;
         }
     </style>
-    <header class="header-section">
+    
+</head>
+<body>
+<header class="header-section">
         <div class="logo">
             <a href ="./customer.php">
-                <img src="img/logo3.png" alt="FastTrack Gym Logo">
+                <img src="img/LOGO3.png" alt="FastTrack Gym Logo">
             </a>
         </div>
     </header>
-</head>
-<body>
-
 <!-- Class Schedule Section -->
 <section class="classtime-section class-time-table spad">
     <div class="container">
