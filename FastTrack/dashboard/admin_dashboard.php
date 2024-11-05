@@ -33,7 +33,7 @@
 </head>
 
 <body>
-<div class="container-fluid position-relative d-flex p-0">
+	<div class="container-fluid position-relative d-flex p-0">
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
@@ -269,7 +269,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 		</div>
 
 	
-<div class="container-fluid pt-4 px-4">
+			<div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">

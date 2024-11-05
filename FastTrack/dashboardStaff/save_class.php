@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query = "UPDATE class_schedule SET day_of_week = '$day', time_slot = '$time', start_time = '$start_time', end_time = '$end_time', class_name = '$class_name' WHERE id = $id";
     } else {
         // Insert new class
-        $query = "INSERT INTO class_schedule (day_of_week, time_slot, start_time, end_time, class_name) VALUES ('$day', '$time', '$start_time', '$end_time', '$class_name')";
+        $query = "INSERT INTO class_schedule (day_of_week, time_slot, start_time, end_time, class_name,capacity) VALUES ('$day', '$time', '$start_time', '$end_time', '$class_name','5')";
     }
 
     if (mysqli_query($conn, $query)) {

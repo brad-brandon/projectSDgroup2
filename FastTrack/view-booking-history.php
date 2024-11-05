@@ -127,7 +127,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Prepare the SQL statement to fetch booking history
-$sql = "SELECT b.booking_id, b.created_at, c.class_name, b.status 
+$sql = "SELECT b.booking_id, b.created_at, c.class_name, b.status, c.start_time,c.end_time, c.day_of_week
         FROM bookings_table b 
         JOIN class_schedule c ON b.id = c.id 
         WHERE b.user_id = ? 
@@ -159,6 +159,9 @@ if ($result->num_rows > 0) {
             <th>Class Name</th>
             <th>Booking Date</th>
             <th>Status</th>
+			<th>start time</th>
+            <th>end time</th>
+			<th>Day of week</th>
           </tr>";
     
     // Fetch and display each booking
@@ -168,6 +171,9 @@ if ($result->num_rows > 0) {
         echo "<td>" . htmlspecialchars($row['class_name']) . "</td>";
         echo "<td>" . htmlspecialchars($row['created_at']) . "</td>";
         echo "<td>" . htmlspecialchars($row['status']) . "</td>";
+		echo "<td>" . htmlspecialchars($row['start_time']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['end_time']) . "</td>";
+		echo "<td>" . htmlspecialchars($row['day_of_week']) . "</td>";
         echo "</tr>";
     }
     
