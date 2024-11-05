@@ -355,11 +355,39 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
+							<form method="post" action="">
+							<button class="btn btn-success add-class-btn" type="submit" name="reset_capacity">Reset Capacity</button>
+							<br></br>
+							<button class="btn btn-success add-class-btn" type="submit" name="reset_current_booking">Reset Current Booking</button>
+							<br></br>
+							</form>
                             <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
                             <br></br>
-							<button class="btn btn-success add-class-btn" onclick="#">VIew Class Booking</button>
+							<button class="btn btn-success add-class-btn" onclick = "window.location.href='view_booking_class.php'">VIew Class Booking</button>
                         </div>
-                        
+                        <?php
+							if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['reset_capacity'])) {
+        // SQL to reset capacity to 5
+        $sql = "UPDATE class_schedule SET capacity = 5"; // Adjust this if your column name is different
+        if ($conn->query($sql) === TRUE) {
+            echo "<p></p><p>Capacity reset to 5 for all classes.</p>";
+        } else {
+            echo "<p></p><p>Error resetting capacity: " . $conn->error . "</p>";
+        }
+    }
+
+    if (isset($_POST['reset_current_booking'])) {
+        // SQL to reset current bookings
+        $sql = "UPDATE class_schedule SET current_bookings = 0"; // Adjust this if your column name is different
+        if ($conn->query($sql) === TRUE) {
+            echo "<p></p><p>Current bookings reset to 0 for all classes.</p>";
+        } else {
+            echo "<p></p><p>Error resetting current bookings: " . $conn->error . "</p>";
+        }
+    }
+}
+							?>
                     </div>
                 </div>
             </div>

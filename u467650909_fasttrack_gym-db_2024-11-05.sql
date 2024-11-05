@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 04, 2024 at 07:23 PM
+-- Generation Time: Nov 05, 2024 at 01:34 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.3.0
 
@@ -66,8 +66,8 @@ CREATE TABLE `class_schedule` (
 --
 
 INSERT INTO `class_schedule` (`id`, `day_of_week`, `time_slot`, `class_name`, `start_time`, `end_time`, `capacity`, `current_bookings`) VALUES
-(2, 'Wednesday', '10:00:00', 'Hypertrophy', '10:00:00', '15:00:00', 3, 2),
-(3, 'Friday', '10:00:00', 'HIIT', '10:00:00', '13:00:00', 4, 1),
+(2, 'Wednesday', '10:00:00', 'Hypertrophy', '10:00:00', '15:00:00', 5, 0),
+(3, 'Friday', '10:00:00', 'HIIT', '10:00:00', '13:00:00', 5, 0),
 (4, 'Sunday', '10:00:00', 'HIIT', '10:00:00', '13:30:00', 5, 0),
 (5, 'Tuesday', '14:00:00', 'Powerlifting', '14:00:00', '17:00:00', 5, 0),
 (6, 'Thursday', '14:00:00', 'Powerlifting', '14:00:00', '17:00:00', 5, 0),
