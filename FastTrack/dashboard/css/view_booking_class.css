@@ -1,0 +1,95 @@
+/* Futuristic Fiery CSS */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: #ffc371;
+    text-shadow: 0 0 10px rgba(255, 95, 109, 0.8);
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+table, th, td {
+    border: 1px solid rgba(255, 95, 109, 0.5);
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
+th {
+    background: rgba(255, 95, 109, 0.8);
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+td {
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+td:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* No bookings message */
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ffc371;
+}
+/* Back to Homepage Button Styling */
+.back-button {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+    background: linear-gradient(90deg, #ffc371, #ff5f6d);
+    transform: scale(1.05);
+    color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+    th, td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}

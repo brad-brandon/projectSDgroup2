@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Gym Class Dashboard</title>
+    <title>FastTrack - Classes</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/logo2.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,16 +33,7 @@
 </head>
 
 <body>
-    <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-
+<div class="container-fluid position-relative d-flex p-0">
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
@@ -51,14 +42,15 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/WONG.png" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="img/logo2.png" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Wong</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0">Staff</h6>
+                        <span>Dashboard</span>
                     </div>
                 </div>
+                
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
@@ -66,16 +58,14 @@
                     </div>
                     <a href="customer.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Customer Info</a>
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Membership</a>
-                    <a href="staff_dashboard.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Class</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Personal Training</a>
-                    
+					<a href="admin_dashboard.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Class</a>
                 </div>
             </nav>
         </div>
         <!-- Sidebar End -->
 
 
-         <!-- Content Start -->
+        <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
@@ -85,88 +75,16 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form>
+                
                 <div class="navbar-nav align-items-center ms-auto">
+                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
+                        <img class="rounded-circle me-lg-2" src="img/LOGO4.png" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Profile</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-						
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">View Profile</span>
-						
-						</a>
-						
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notification</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/WONG.png" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Wong</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <li><a href="./viewprofileStaff.php">View profile</a></li>
-                            <a href="#" class="dropdown-item">Settings</a>
+                        <a href="./viewprofileStaff.php" class="dropdown-item">View Profile</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
@@ -297,14 +215,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
         ?>
     </tbody>
-	
 </table>
 
 <!-- Add/Edit Class Form (hidden by default) -->
 <div id="classForm" style="display:none;">
-    <h6 class="mb-0" id="formTitle" style="background-color:#060614">Add Class</h6>
+    <h6 class="mb-0" id="formTitle" >Add Class</h6>
 	
-    <form id="classFormFields" style="background-color:#060614" onsubmit="return saveClass()">
+    <form id="classFormFields" onsubmit="return saveClass()">
         <label for="day">Day:</label>
         <select id="day" name="day">
             <option value="Monday">Monday</option>
@@ -331,8 +248,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <label for="end_time">End Time:</label>
         <input type="time" id="end_time" name="end_time" required><br><br>
         
-        <label for="class_name">Class Name:</label>
-        <input type="text" id="class_name" name="class_name" required><br><br>
+       <label for="class_name">Choose a Class:</label>
+                    <select name="class_name" id="class_name" required>
+                        <option value="Hypertrophy">Hypertrophy</option>
+                        <option value="HIIT">HIIT</option>
+                        <option value="Powerlifting">Powerlifting</option>
+                        <option value="ZUMBA">ZUMBA</option>
+                    </select>
         
         <input type="hidden" id="class_id" name="class_id">
 		       
@@ -357,9 +279,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 							<br></br>
 							</form>
                             <button class="btn btn-success add-class-btn" onclick="showAddClassForm()">Add Class</button>
-							<br></br>
-                            <button class="btn btn-success add-class-btn" onclick = "window.location.href='view_booking_class.php'">View Class Booking</button>
-							<?php
+                            <br></br>
+							<button class="btn btn-success add-class-btn" onclick = "window.location.href='view_booking_class.php'">VIew Class Booking</button>
+                        </div>
+                        <?php
 							if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['reset_capacity'])) {
         // SQL to reset capacity to 5
@@ -375,15 +298,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         // SQL to reset current bookings
         $sql = "UPDATE class_schedule SET current_bookings = 0"; // Adjust this if your column name is different
         if ($conn->query($sql) === TRUE) {
-            echo "<br></br><p>Current bookings reset to 0 for all classes.</p>";
+            echo "<p></p><p>Current bookings reset to 0 for all classes.</p>";
         } else {
-            echo "<br></br><p>Error resetting current bookings: " . $conn->error . "</p>";
+            echo "<p></p><p>Error resetting current bookings: " . $conn->error . "</p>";
         }
     }
 }
 							?>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
@@ -467,6 +388,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     document.getElementById('classFormFields').reset();
 }
 
+
+// Other functions remain the same...
+
+
     function hideClassForm() {
         document.getElementById('classForm').style.display = 'none';
     }
@@ -523,7 +448,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">FastTrack Gym</a>, All Right Reserved. 
+                            &copy; <a href="index.html">FastTrack Gym</a>, All Right Reserved. 
                         </div>
                         
                     </div>

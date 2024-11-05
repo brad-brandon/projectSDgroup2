@@ -414,7 +414,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         <h3>Get Started Today</h3>
                         <p>New member special! 10% discount for first registration!</p>
                     </div>
-                    <a href="#" class="primary-btn cta-btn">book now</a>
+                    <a href="membership.html" class="primary-btn cta-btn">book now</a>
                 </div>
             </div>
         </div>
@@ -422,7 +422,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <!-- Cta Section End -->
 
  <!-- Footer Section Begin -->
-    <footer class="footer-section">
+ <footer class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -434,11 +434,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 						and 24/7 support, all in a welcoming environment dedicated to your health and well-being.</p>
                         <div class="social-links">
                             <h6>Follow us</h6>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/FastrackGym/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.google.com/maps/place/FastTrack+Gym+%26+Fitness+Centre/@3.1949376,101.7244576,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc37f5bdfa35a5:0xa1e339c137810a59!8m2!3d3.1949376!4d101.7270325!16s%2Fg%2F11f0kw1mxs?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.instagram.com/fastrackgym/"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -446,15 +444,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <div class="footer-widget">
                         <h5>Our Blog</h5>
                         <div class="footer-blog">
-                            <a href="#" class="fb-item">
+                            <a href="blog.html" class="fb-item">
                                 <h6>HIIT BENEFITS</h6>
                                 <span class="blog-time"><i class="fa fa-clock-o"></i> Jan 02, 2022</span>
                             </a>
-                            <a href="#" class="fb-item">
+                            <a href="blog.html" class="fb-item">
                                 <h6>DON'T STRESS ABOUT YOUR DIET</h6>
                                 <span class="blog-time"><i class="fa fa-clock-o"></i> July 2023</span>
                             </a>
-                            <a href="#" class="fb-item">
+                            <a href="blog.html" class="fb-item">
                                 <h6>DON'T BE A AFRAID TO GO GYM</h6>
                                 <span class="blog-time"><i class="fa fa-clock-o"></i> Aug 08, 2024</span>
                             </a>
@@ -465,10 +463,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <div class="footer-widget">
                         <h5>Program</h5>
                         <ul class="workout-program">
-                            <li><a href="#">Hypertrophy</a></li>
-                            <li><a href="#">HIIT</a></li>
-                            <li><a href="#">Zumba</a></li>
-                            <li><a href="#">Powerlifting</a></li>
+                            <li><a href="blog.html">Hypertrophy</a></li>
+                            <li><a href="blog.html">HIIT</a></li>
+                            <li><a href="blog.html">Zumba</a></li>
+                            <li><a href="blog.html">Powerlifting</a></li>
                         </ul>
                     </div>
                 </div>
@@ -501,8 +499,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
+                            FastTrack Gym &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a href="index.html" target="_blank">FastTrack</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
                     </div>
                 </div>
             </div>

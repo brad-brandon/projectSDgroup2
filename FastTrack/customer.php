@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FastTrack Gym | Homepage</title>
 
+    <link href="img/logo2.png" rel="icon">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
@@ -34,14 +36,14 @@
 <header class="header-section">
     <div class="container-fluid">
         <div class="logo">
-            <a href="./customer.html">
+            <a href="./customer.php">
             </a>
         </div>
 		
 	<header class="header-section">
     <div class="container-fluid">
         <div class="logo">
-            <a href="./customer.html">
+            <a href="./customer.php">
                 <img src="img/logo3.png" alt="FastTrack Gym Logo">
             </a>
         </div>
@@ -62,8 +64,8 @@
                 <div class="nav-menu">
                     <nav class="mainmenu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./customer.html">Home</a></li>
-                            <li><a href="./schedule_cus.html">Schedule</a></li>
+                            <li class="active"><a href="./customer.php">Home</a></li>
+                            <li><a href="./schedule_cus.php">Schedule</a></li>
                             <li><a href="./gallery_cus.html">Gallery</a></li>
                             <li><a href="./blog_cus.html">Blog</a>
                                 <ul class="dropdown">
@@ -71,7 +73,7 @@
                                 </ul>
                             </li>
 							<li><a href="./about-us_cus.html">About us</a></li>
-                            <li><a href="./contact_cus.html">Contacts</a></li>
+                            <li><a href="./contact_cus.html">Contact us</a></li>
 							<li><a href="./viewprofile.php">Profile</a></li>
                         </ul>
                     </nav>
@@ -82,8 +84,8 @@
     </header>
     <!-- Header End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero-section">
+     <!-- Hero Section Begin -->
+     <section class="hero-section">
         <div class="hero-items owl-carousel">
             <div class="single-hero-item set-bg" data-setbg="img/hero-slider/hero-1.jpg">
                 <div class="container">
@@ -93,7 +95,7 @@
                                 <h2>Join Us Now</h2>
 								<h2>At</h2>
                                 <h1>FASTTRACK</h1>
-                                <a href="#" class="primary-btn">Read More</a>
+                                <a href="blog-single.html" class="primary-btn">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -106,7 +108,7 @@
                             <div class="hero-text">
                                 <h2>Join Us Now</h2>
                                 <h1>FITNESS & Nutrition</h1>
-                                <a href="#" class="primary-btn">Read More</a>
+                                <a href="blog-single.html" class="primary-btn">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -119,7 +121,7 @@
                             <div class="hero-text">
                                 <h2>Join Us Now</h2>
                                 <h1>TRAINING & CLASSES</h1>
-                                <a href="#" class="primary-btn">Read More</a>
+                                <a href="blog-single.html" class="primary-btn">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -129,29 +131,29 @@
     </section>
     <!-- Hero End -->
 
-    <!-- Feature Section Begin -->
-    <section class="feature-section">
+   <!-- Feature Section Begin -->
+   <section class="feature-section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
                     <div class="feature-item set-bg" data-setbg="img/feature/feature-1.jpg">
                         <h3>GROUP CLASSES</h3>
                         <p>Work out with others in fun, instructor-led sessions. <br/> Perfect for all fitness levels!</p>
-                        <a href="#" class="primary-btn f-btn">Read More</a>
+                        <a href="blog-single.html" class="primary-btn f-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item set-bg" data-setbg="img/feature/feature-2.jpg">
                         <h3>PERSONAL TRAINING</h3>
                         <p>Get one-on-one guidance from expert trainers<br /> to achieve your fitness goals faster with customized workouts.</p>
-                        <a href="#" class="primary-btn f-btn">Read More</a>
+                        <a href="blog-single.html" class="primary-btn f-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item set-bg" data-setbg="img/feature/feature-3.jpg">
                         <h3>Sports Nutrition</h3>
                         <p>Fuel your performance with expert nutrition plans tailored to your training needs,<br /> helping you reach peak fitness.</p>
-                        <a href="#" class="primary-btn f-btn">Read More</a>
+                        <a href="blog-single.html" class="primary-btn f-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -159,8 +161,8 @@
     </section>
     <!-- Feature Section End -->
 
-    <!-- About Section Begin -->
-    <section class="home-about spad">
+     <!-- About Section Begin -->
+     <section class="home-about spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -170,7 +172,7 @@
                         <p class="long-details">Strength training involves resistance (weights, bands, body weight) to build muscle 
 						and improve fitness. It includes compound and isolation exercises, with a focus on progressive overload and rest. 
 						Benefits are increased muscle mass, better metabolism, and injury prevention.</p>
-                        <a href="#" class="primary-btn about-btn">Learn More</a> <!-- need to edit this read more -->
+                        <a href="blog-single.html" class="primary-btn about-btn">Learn More</a> <!-- need to edit this read more -->
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -202,9 +204,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="classes-item set-bg" data-setbg="img/classes/class-1.jpg"> <!-- edit the image -->
                         <h4>Hypertrophy Training</h4>
-                        <p>Focus on muscle growth with targeted exercises designed to maximize muscle size and definition. 
-						Ideal for building strength and sculpting your physique.</p>
-                        <a href="#" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
+                        <p>Focus on muscle growth with targeted exercises designed to maximize muscle size and definition.
+                        Ideal for building strength and sculpting your physique.</p>
+                        <a href="blog.html" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -212,7 +214,7 @@
                         <h4>HIIT (High-Intensity Interval Training)</h4>
                         <p>Kickstart your fitness journey with short, effective workouts that combine quick exercises and rest to burn fat and boost energy.
                         </p>
-                        <a href="#" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
+                        <a href="blog.html" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -220,7 +222,7 @@
                         <h4>zumba</h4>
                         <p>Get energized with fun, dance-based workouts set to lively music. 
 						Enjoy a full-body workout that improves cardiovascular health and coordination while having a blast. </p>
-                        <a href="#" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
+                        <a href="blog.html" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -228,7 +230,7 @@
                         <h4>Powerlifting</h4>
                         <p>Focus on the core squat, bench press, and deadlift to build maximum strength and power. 
 						Learn proper technique and training strategies for effective and safe lifting.</p>
-                        <a href="#" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
+                        <a href="blog.html" class="primary-btn class-btn">Read More</a> <!-- need to edit this read more -->
                     </div>
                 </div>
             </div>
@@ -581,7 +583,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="col-lg-12">
                     <div class="video-text">
                         <h2>Gym In Setapak</h2>
-                        <a href="https://www.youtube.com/watch?v=X_9VoqR5ojM" class="play-btn video-popup"> <!-- record video in gym then put here-->
+                        <a href="https://www.youtube.com/watch?v=RYq-ux374uQ" class="play-btn video-popup"> <!-- record video in gym then put here-->
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
@@ -606,7 +608,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="grid-sizer"></div>
                 <div class="col-lg-4 col-md-6 grid-item">
                     <div class="blog-item large-item set-bg" data-setbg="img/blog/blog-1.jpg">
-                        <a href="#" class="blog-text">
+                        <a href="blog-single.html" class="blog-text">
                             <div class="categories">Hypertrophy TRAINING</div>
                             <h5>Many people sign up for Hypertrophy Class</h5>
                         </a>
@@ -614,7 +616,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item">
                     <div class="blog-item instagram-item">
-                        <a href="#" class="instagram-text">
+                        <a href="https://www.instagram.com/fastrackgym/" class="instagram-text">
                             <div class="categories">Gym @ FastTrack <i class="fa fa-instagram"></i></div>
                             <h5>Follow Our Classes Gyming on Instagram #BodyBuilding #fitness</h5>
                         </a>
@@ -622,7 +624,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item">
                     <div class="blog-item small-item set-bg" data-setbg="img/blog/blog-2.jpg">
-                        <a href="#" class="blog-text">
+                        <a href="blog-single.html" class="blog-text">
                             <div class="categories">HIIT training</div>
                             <h5>HIIT training is challenging!</h5>
                         </a>
@@ -630,7 +632,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item">
                     <div class="blog-item large-item xls-large set-bg" data-setbg="img/blog/blog-3.jpg">
-                        <a href="#" class="blog-text">
+                        <a href="blog-single.html" class="blog-text">
                             <div class="categories">Nutrition</div>
                             <h5>Trainers always there to help with your nutrition needs</h5>
                         </a>
@@ -638,7 +640,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item">
                     <div class="blog-item large-item set-bg" data-setbg="img/blog/blog-4.jpg">
-                        <a href="#" class="blog-text">
+                        <a href="blog-single.html" class="blog-text">
                             <div class="categories">Powerlifting</div>
                             <h5>Many famous power-lifters enjoy our training sessions</h5>
                         </a>
@@ -646,7 +648,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item">
                     <div class="blog-item small-item set-bg" data-setbg="img/blog/blog-5.jpg">
-                        <a href="#" class="blog-text">
+                        <a href="blog-single.html" class="blog-text">
                             <div class="categories">ZUMBA</div>
                             <h5>People can't stop enjoying our zumba classes!</h5>
                         </a>
@@ -666,7 +668,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         <h3>Get Started Today</h3>
                         <p>New member special! 10% discount for first registration!</p>
                     </div>
-                    <a href="#" class="primary-btn cta-btn">book now</a>
+                    <a href="membership.html" class="primary-btn cta-btn">book now</a>
                 </div>
             </div>
         </div>
@@ -688,7 +690,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
             <div class="map-contact-form">
                 <h5>Contact Us</h5>
-                <form action="#">
+                <form action="contact_cus.html">
                     <input type="text" placeholder="Name">
                     <input type="text" class="phone" placeholder="Phone">
                     <textarea placeholder="Message"></textarea>
@@ -706,17 +708,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="col-lg-3">
                     <div class="footer-logo-item">
                         <div class="f-logo">
-                            <a href="#"><img src="img/LOGO3.png" alt=""></a>
+                            <a href="customer.php"><img src="img/LOGO3.png" alt=""></a>
                         </div>
                         <p>Experience top-notch fitness with us: expert trainers, personalized sessions, state-of-the-art equipment, daily classes, 
 						and 24/7 support, all in a welcoming environment dedicated to your health and well-being.</p>
                         <div class="social-links">
                             <h6>Follow us</h6>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/FastrackGym/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.google.com/maps/place/FastTrack+Gym+%26+Fitness+Centre/@3.1949376,101.7244576,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc37f5bdfa35a5:0xa1e339c137810a59!8m2!3d3.1949376!4d101.7270325!16s%2Fg%2F11f0kw1mxs?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.instagram.com/fastrackgym/"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -743,10 +743,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <div class="footer-widget">
                         <h5>Program</h5>
                         <ul class="workout-program">
-                            <li><a href="#">Hypertrophy</a></li>
-                            <li><a href="#">HIIT</a></li>
-                            <li><a href="#">Zumba</a></li>
-                            <li><a href="#">Powerlifting</a></li>
+                            <li><a href="blog.html">Hypertrophy</a></li>
+                            <li><a href="blog.html">HIIT</a></li>
+                            <li><a href="blog.html">Zumba</a></li>
+                            <li><a href="blog.html">Powerlifting</a></li>
                         </ul>
                     </div>
                 </div>
@@ -778,10 +778,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+FastTrack Gym &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a href="index.html" target="_blank">FastTrack</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
-                    </div>
                 </div>
             </div>
         </div>

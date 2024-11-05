@@ -27,11 +27,15 @@ if (!$result) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>View Bookings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastTrack - View Bookings</title>
+    <link rel="stylesheet" href="css/view_booking_class.css">
 </head>
 <body>
 
 <h1> View Bookings</h1>
+
+<a href="staff_dashboard.php" class="back-button">Back to Dashboard</a>
 
 <?php if ($result->num_rows > 0): ?>
     <table border="1">

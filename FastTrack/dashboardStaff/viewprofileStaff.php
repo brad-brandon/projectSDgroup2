@@ -62,11 +62,7 @@ $conn->close();
             <p>Email: <?php echo htmlspecialchars($email); ?></p>
             <p>Phone: <?php echo htmlspecialchars($phoneNo); ?></p>
         </div>
-        <div class="subscription-status">
-            <h3>Subscription Status</h3>
-            <p>Membership Type: </p>
-            <p>Status: </p>
-        </div>
+        
 
         <!-- Edit Profile Button -->
         <button class="edit-profile-btn" onclick="toggleEditForm()">Edit Profile</button>
