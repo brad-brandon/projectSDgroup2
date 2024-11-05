@@ -1,0 +1,79 @@
+/* Futuristic Fiery CSS */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.message-box {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff5f6d;
+    color: #ffffff;
+    animation: fadeIn 1s ease;
+}
+
+.message-box h2 {
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 95, 109, 0.8);
+    margin-bottom: 20px;
+}
+
+.message-box p {
+    font-size: 16px;
+    color: #ffc371;
+    margin-bottom: 20px;
+}
+
+.message-box a {
+    color: #ffc371;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.message-box a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #ffc371, #ff5f6d);
+    transform: scale(1.05);
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

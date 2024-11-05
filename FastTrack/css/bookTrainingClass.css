@@ -1,134 +1,67 @@
-/* General Styles */
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #1c1c1c; /* Dark background */
-    color: #ffffff; /* Light text */
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Set a default font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f4f4f4; /* Set a background color */
 }
 .header-section {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    text-align: center;
-    z-index: 10; /* Ensures the header is above other content */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: #333; /* Header background color */
+    padding: 20px; /* Padding for header */
+    text-align: center; /* Center-align text */
 }
 .header-section .logo img {
-    max-width: 150px;
-    height: auto;
+    max-width: 150px; /* Max width for the logo */
+    height: auto; /* Maintain aspect ratio */
 }
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #2c2c2c; /* Darker table background */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for futuristic look */
+.classtime-section {
+    padding: 40px 20px; /* Padding for the class time section */
 }
-
-th, td {
-    border: 1px solid #444; /* Darker border */
-    padding: 12px;
-    text-align: center;
-    color: #ffffff;
+.section-title h2 {
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Title color */
 }
-
-th {
-    background-color: #f01f1f; /* Dark orange header */
-    text-transform: uppercase;
-    font-weight: 700;
+.myTable {
+    width: 100%; /* Table takes full width */
+    border-collapse: collapse; /* Remove gaps between cells */
+    margin: 20px 0; /* Margin around the table */
+    background-color: #fff; /* Table background color */
 }
-
-td {
-    background-color: #1e1e1e; /* Darker cells */
-    transition: background-color 0.3s ease;
+.myTable th, .myTable td {
+    padding: 12px; /* Padding for table cells */
+    text-align: center; /* Center-align text in cells */
+    border: 1px solid #ddd; /* Border for cells */
 }
-
-td:hover {
-    background-color: #f01f1f; /* Orange hover effect */
+.myTable th {
+    background-color: #f2f2f2; /* Header background color */
+    color: #333; /* Header text color */
 }
-
-/* Typography */
-h2 {
-    margin-top: 20px;
-    text-align: center;
-    color: #f01f1f; /* Dark orange heading */
-    font-size: 32px;
-    letter-spacing: 1px;
+.button {
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Button padding */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners */
 }
-
-/* Section Title */
-.section-title {
-    margin-bottom: 30px;
+.button:disabled {
+    background-color: #ccc; /* Disabled button color */
 }
-
-/* Buttons */
-.primary-btn {
-    display: inline-block;
-    width: auto;
-    padding: 12px 30px;
-    background-color: #f01f1f; /* Dark orange button */
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px; /* Round button for modern look */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3); /* Futuristic glowing shadow */
+.pagination {
+    text-align: center; /* Center-align pagination */
+    margin: 20px 0; /* Margin for pagination */
 }
-
-.primary-btn:hover {
-    background-color: #e67e00; /* Slightly darker orange on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+.pagination a {
+    margin: 0 5px; /* Space between pagination links */
+    padding: 8px 12px; /* Padding for pagination links */
+    border: 1px solid #007BFF; /* Border for pagination links */
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
 }
-
-/* Booking Form */
-.booking-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #2c2c2c; /* Dark background for form */
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Futuristic shadow */
-    text-align: center;
+.pagination a.active {
+    background-color: #007BFF; /* Active page background */
+    color: white; /* Active page text color */
 }
-
-.booking-form label {
-    display: block;
-    margin: 10px 0;
-    font-size: 18px;
-    color: #f01f1f; /* Dark orange labels */
-}
-
-.booking-form select, 
-.booking-form input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #1e1e1e; /* Darker input background */
-    color: #fff;
-    border: 1px solid #444;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border 0.3s ease;
-}
-
-.booking-form select:focus, 
-.booking-form input[type="date"]:focus {
-    border-color: #ff8c00; /* Orange border on focus */
-    outline: none;
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-/* Transitions for smoother animations */
-* {
-    transition: all 0.3s ease;
+.pagination a:hover {
+    background-color: #0056b3; /* Hover effect for links */
+    color: white; /* Text color on hover */
 }

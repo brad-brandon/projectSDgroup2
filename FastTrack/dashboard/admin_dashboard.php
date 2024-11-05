@@ -289,9 +289,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         // SQL to reset capacity to 5
         $sql = "UPDATE class_schedule SET capacity = 5"; // Adjust this if your column name is different
         if ($conn->query($sql) === TRUE) {
-            echo "<p></p><p>Capacity reset to 5 for all classes.</p>";
+            echo '<div style="padding: 15px; margin: 20px 0; border: 1px solid #4CAF50; background-color: #dff0d8; color: #3c763d; border-radius: 5px;">
+            <strong>Success!</strong> Capacity has been reset to <strong>5</strong> for all classes.
+          </div>';
         } else {
-            echo "<p></p><p>Error resetting capacity: " . $conn->error . "</p>";
+            echo '<div style="padding: 15px; margin: 20px 0; border: 1px solid #f44336; background-color: #f8d7da; color: #721c24; border-radius: 5px;">
+                <strong>Error!</strong> Unable to reset capacity: <em>' . htmlspecialchars($conn->error) . '</em>
+              </div>';
         }
     }
 
@@ -299,9 +303,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         // SQL to reset current bookings
         $sql = "UPDATE class_schedule SET current_bookings = 0"; // Adjust this if your column name is different
         if ($conn->query($sql) === TRUE) {
-            echo "<p></p><p>Current bookings reset to 0 for all classes.</p>";
+            echo '<div style="padding: 15px; margin: 20px 0; border: 1px solid #4CAF50; background-color: #dff0d8; color: #3c763d; border-radius: 5px;">
+                <strong>Success!</strong> Current bookings have been reset to <strong>0</strong> for all classes.
+              </div>';
         } else {
-            echo "<p></p><p>Error resetting current bookings: " . $conn->error . "</p>";
+            echo '<div style="padding: 15px; margin: 20px 0; border: 1px solid #f44336; background-color: #f8d7da; color: #721c24; border-radius: 5px;">
+                <strong>Error!</strong> Unable to reset current bookings: <em>' . htmlspecialchars($conn->error) . '</em>
+              </div>';
         }
     }
 }
