@@ -214,10 +214,12 @@
             $currentBookingsCount = getUserBookingsCount($conn, $user_id);
 
             if (hasReachedBookingLimit($subscription, $currentBookingsCount)) {
-                echo "<h2>Booking Failed: Limit Reached</h2>
-                      <p>You have reached the booking limit for your subscription plan.</p>
-                      <p><a href='view-booking-history.php'>View Your Booking History</a></p>";
-                exit;
+                //echo "<h2>Booking Failed: Limit Reached</h2>
+                //      <p>You have reached the booking limit for your subscription plan.</p>
+                //      <p><a href='view-booking-history.php'>View Your Booking History</a></p>";
+                //exit;
+				header("Location: verify_result.php?message=" . urlencode("Booking Failed: Limit Reached.You have reached the booking limit for your subscription plan."));
+                exit();
             }
 
             // Check for existing booking with the same user_id and class_id
@@ -228,11 +230,13 @@
             $result = $checkStmt->get_result();
 
             if ($result->num_rows > 0) {
-                echo "<h2>Booking Failed: Duplicate Entry</h2>
-                      <p>You have already booked this class.</p>
-                      <p><a href='view-booking-history.php'>View Your Booking History</a></p>
-                      <a href='customer.php' class='button'>Go back to main page</a>";
-                exit;
+                //echo "<h2>Booking Failed: Duplicate Entry</h2>
+                //      <p>You have already booked this class.</p>
+                 //     <p><a href='view-booking-history.php'>View Your Booking History</a></p>
+                 //     <a href='customer.php' class='button'>Go back to main page</a>";
+                //exit;
+				header("Location: verify_result.php?message=" . urlencode("Booking Failed: Duplicate Entry,You have already booked this class."));
+                exit();
             }
 
             // Check class capacity before inserting booking
@@ -250,11 +254,15 @@
                     $stmt->bind_param("ii", $user_id, $class_id);
 
                     if ($stmt->execute()) {
-                        echo "<h2>Class successfully booked!</h2>
-                              <p>Your booking has been confirmed.</p>
-                              <a href='customer.php' class='button'>Go back to main page</a>";
+                       // echo "<h2>Class successfully booked!</h2>
+                        //      <p>Your booking has been confirmed.</p>
+                        //      <a href='customer.php' class='button'>Go back to main page</a>";
+						header("Location: verify_result.php?message=" . urlencode("Class successfully booked! Your booking has been confirmed."));
+                exit();
                     } else {
-                        echo "<h2>Error: Booking failed.</h2><p>" . htmlspecialchars($stmt->error) . "</p>";
+                        header("Location: verify_result.php?message=" . urlencode("Error: Booking failed."));
+                exit();
+						//echo "<h2>Error: Booking failed.</h2><p>" . htmlspecialchars($stmt->error) . "</p>";
                     }
 
                     $stmt->close();
@@ -262,9 +270,11 @@
                     die("<p>Error preparing statement: " . $conn->error . "</p>");
                 }
             } else {
-                echo "<h2>Booking Failed: Class Full</h2>
-                      <p>This class is already fully booked. Please select another class.</p>
-                      <a href='customer.php' class='button'>Go back to main page</a>";
+                //echo "<h2>Booking Failed: Class Full</h2>
+                      //<p>This class is already fully booked. Please select another class.</p>
+                      //<a href='customer.php' class='button'>Go back to main page</a>";
+					  header("Location: verify_result.php?message=" . urlencode("Booking Failed: Class Full.This class is already fully booked. Please select another class."));
+                exit();
             }
 
             $capacityCheckStmt->close();

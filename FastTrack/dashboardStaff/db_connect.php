@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "root";  // adjust your database credentials
-$password = "root";
+$username = "u467650909_Webs392024";
+$password = "Webs392024";
 $dbname = "u467650909_fasttrack_gym";
 
 // Create connection

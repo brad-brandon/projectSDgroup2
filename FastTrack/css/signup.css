@@ -11,7 +11,7 @@ body {
 }
 
 .logo img {
-    max-width: 80px; /* Set a new maximum width for general use */
+    max-width: 250px; /* Set a new maximum width for general use */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Center the logo if needed */
     margin: 0 auto; /* Center the logo horizontally */

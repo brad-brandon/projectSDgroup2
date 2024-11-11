@@ -86,11 +86,20 @@ if ($status_id == 1 && $billcode) {
         $stmt->close();
 
         echo "Payment successful, and membership has been updated.";
+        
+        header("Location: verify_result.php?message=" . urlencode("Payment successful, and membership has been updated."));
+                exit();
+        
+        
     } else {
         echo "Error retrieving transaction details from ToyyibPay.";
+        header("Location: verify_result.php?message=" . urlencode("Error retrieving transaction details from ToyyibPay."));
+                exit();
     }
 } else {
     echo "Payment not successful or invalid request.";
+    header("Location: verify_result.php?message=" . urlencode("Payment not successful or invalid request."));
+                exit();
 }
 
 $conn->close();

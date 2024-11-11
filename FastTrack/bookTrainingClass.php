@@ -43,10 +43,13 @@ $currentBookingsCount = $userInfo['bookings_count'];
 
 // Check user's status before proceeding
 if ($status !== 'active') {
-    echo "<h2>Booking Failed: Subscription Required</h2>";
-    echo "<p>Your account is currently inactive. To enjoy our classes, we invite you to subscribe to one of our plans.</p>";
-    echo "<p><a href='membership.html'>Subscribe Now</a></p> <a href='customer.php' class='button'>Go back to main page</a>"; // Link to subscription page
-    exit;
+	header("Location: verify_result.php?message=" . urlencode("Booking Failed: Subscription Required.
+	Your account is currently inactive. To enjoy our classes, we invite you to subscribe to one of our plans."));
+                exit();
+    //echo "<h2>Booking Failed: Subscription Required</h2>";
+    //echo "<p>Your account is currently inactive. To enjoy our classes, we invite you to subscribe to one of our plans.</p>";
+    //echo "<p><a href='membership.html'>Subscribe Now</a></p> <a href='customer.php' class='button'>Go back to main page</a>"; // Link to subscription page
+    //exit;
 }
 
 // Set booking limits based on subscription type
