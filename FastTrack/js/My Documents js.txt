@@ -1,0 +1,10 @@
+bootstrap.min.js
+jquery-3.3.1.min.js
+jquery.magnific-popup.min.js
+jquery.nice-select.min.js
+jquery.slicknav.js
+main.js
+masonry.pkgd.min.js
+mixitup.min.js
+My Documents js.txt
+owl.carousel.min.js

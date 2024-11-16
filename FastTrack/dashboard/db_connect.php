@@ -25,7 +25,7 @@ $dbname = "fasttrack_gym";
 
 // Database credentials
 $servername = "localhost";
-$username = "u467650909_Webs392024";
+$username = "Webs392024";
 $password = "Webs392024";
 $dbname = "u467650909_fasttrack_gym";
 // Create a new connection using MySQLi
